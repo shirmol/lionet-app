@@ -17,17 +17,4 @@ This project provides a safe digital environment for soldiers to practice using 
 * **CSS3** (Custom styling, animations, and media queries)
 * **Vite** (Build tool for fast development)
 
-## 🚀 Getting Started
-
-1.  Clone the repository.
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Run the project:
-    ```bash
-    npm run dev
-    ```
-
----
 *Created by molakandove Shir | 2025*
