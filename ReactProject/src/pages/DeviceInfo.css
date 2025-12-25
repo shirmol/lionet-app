@@ -139,18 +139,18 @@
 @media (max-width: 900px) {
 
   .page-device {
-    height: auto; /* מאפשר גלילה חופשית */
+    height: auto;
     min-height: 100vh;
+    overflow-y: auto; /* מאפשר גלילה */
   }
 
   .device-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     width: 100%;
-    /* הוספתי ריפוד למטה (100px) כדי שהחץ לא יסתיר את הטקסט */
-    padding: 20px 20px 100px 20px; 
+    /* הוספתי ריפוד ענק למטה כדי שהחץ לא יעלה על כלום */
+    padding: 20px 15px 150px 15px !important; 
     gap: 15px;
   }
 
@@ -159,17 +159,15 @@
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    animation: none !important; /* מבטל אנימציות כבדות במובייל */
+    /* ביטול אנימציות במובייל כדי למנוע קפיצות */
+    animation: none !important; 
+    transform: none !important;
   }
 
   .device-image img {
     width: auto;
-    max-width: 60%; /* שלא יהיה רחב מדי */
-    max-height: 30vh; /* מגביל גובה כדי להשאיר מקום לטקסט */
+    max-height: 250px; /* מקטין את הטלפון כדי להשאיר מקום לטקסט */
     object-fit: contain;
-    border-radius: 20px;
-    border: 3px solid #2a2a2a;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
   .device-info {
@@ -180,49 +178,47 @@
     font-size: 24px;
     text-align: center;
     margin-bottom: 15px;
-    margin-top: 0;
   }
 
-  .info-list {
-    gap: 10px;
-  }
-
+  /* תיקון התיבות */
   .info-row {
     width: 100%;
-    font-size: 15px; /* הגדלתי קצת לקריאות */
-    padding: 12px;
+    font-size: 15px;
+    padding: 15px;
+    height: auto; /* הגובה יגדל לפי הטקסט */
   }
   
-  /* סידור האייקונים והטקסט בתוך הכרטיסייה */
+  /* התיקון הקריטי להתנגשות אייקונים וטקסט */
   .special-row {
     display: flex;
-    flex-direction: column; /* טקסט למעלה, אייקונים למטה */
-    align-items: flex-start; 
-    gap: 10px;
+    flex-direction: column; /* מסדר אחד מתחת לשני */
+    align-items: flex-start;
+    gap: 15px; 
   }
 
   .connection-icons {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* מיישר את האייקונים לצד שמאל (ב-RTL) */
-    gap: 10px;
+    justify-content: flex-end; /* שם את האייקונים בצד שמאל */
+    gap: 15px;
+    margin-top: 5px;
   }
   
   .icon-good img, .icon-bad img {
-      width: 35px; /* אייקונים קצת יותר גדולים */
-      height: 35px;
+      width: 40px;
+      height: 40px;
   }
 
-  /* החץ מקובע למטה */
+  /* החץ נשאר מקובע, אבל עכשיו יש לו מקום */
   .next-arrow {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 9999;
   }
   
   .next-arrow img {
-    width: 55px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6)); /* צל כדי שיראו אותו טוב על כל רקע */
+    width: 60px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.7));
   }
 }
