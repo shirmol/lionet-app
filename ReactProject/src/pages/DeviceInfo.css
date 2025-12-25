@@ -138,88 +138,91 @@
 
 @media (max-width: 900px) {
 
+  .page-device {
+    height: auto; /* מאפשר גלילה חופשית */
+    min-height: 100vh;
+  }
+
   .device-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
-    width: 100%; 
-    padding: 0 15px 80px 15px; 
-    gap: 5px; 
-    margin: 0;
+    justify-content: flex-start;
+    width: 100%;
+    /* הוספתי ריפוד למטה (100px) כדי שהחץ לא יסתיר את הטקסט */
+    padding: 20px 20px 100px 20px; 
+    gap: 15px;
   }
 
   .device-image {
-    order: -1;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 10px; 
-    margin: 0 0 5px 0; 
-    min-height: 230px; 
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
+    margin-bottom: 10px;
+    animation: none !important; /* מבטל אנימציות כבדות במובייל */
   }
 
   .device-image img {
-    width: 110px; 
-    height: 220px;
-    object-fit: cover;
-    
-    border-radius: 16px;
+    width: auto;
+    max-width: 60%; /* שלא יהיה רחב מדי */
+    max-height: 30vh; /* מגביל גובה כדי להשאיר מקום לטקסט */
+    object-fit: contain;
+    border-radius: 20px;
     border: 3px solid #2a2a2a;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
   .device-info {
     width: 100%;
-    max-width: 100%;
-    padding: 0;
   }
 
   .page-title {
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 5px; 
+    margin-bottom: 15px;
     margin-top: 0;
-    line-height: 1.2;
   }
 
   .info-list {
-      gap: 6px; 
+    gap: 10px;
   }
 
   .info-row {
     width: 100%;
-    font-size: 13.5px; 
-    padding: 10px;
+    font-size: 15px; /* הגדלתי קצת לקריאות */
+    padding: 12px;
   }
   
+  /* סידור האייקונים והטקסט בתוך הכרטיסייה */
   .special-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+    display: flex;
+    flex-direction: column; /* טקסט למעלה, אייקונים למטה */
+    align-items: flex-start; 
+    gap: 10px;
   }
 
-.connection-icons {
+  .connection-icons {
     width: 100%;
     display: flex;
-    justify-content: flex-start; 
-    margin-top: 0;
+    justify-content: flex-end; /* מיישר את האייקונים לצד שמאל (ב-RTL) */
+    gap: 10px;
   }
   
   .icon-good img, .icon-bad img {
-      width: 28px;
-      height: 28px;
+      width: 35px; /* אייקונים קצת יותר גדולים */
+      height: 35px;
   }
 
+  /* החץ מקובע למטה */
   .next-arrow {
-    bottom: 10px;
-    left: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
   }
   
   .next-arrow img {
-    width: 50px;
+    width: 55px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6)); /* צל כדי שיראו אותו טוב על כל רקע */
   }
 }
