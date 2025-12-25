@@ -158,12 +158,12 @@
         display: flex;
         justify-content: center;
         margin-bottom: -3px;
-        animation: none !important;
-        transform: none !important;
+        animation: none ;
+        transform: none ;
     }
 
   .device-image img {
-    max-height: 24vh; 
+    max-height: 22vh; 
     width: auto;
     object-fit: contain;
   }
@@ -185,7 +185,7 @@
     display: flex;
     flex-direction: column ;
     align-items: flex-start ;
-    gap: 1x ;
+    gap:1px;
   }
 
   .connection-icons {
