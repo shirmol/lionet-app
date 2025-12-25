@@ -142,6 +142,7 @@
       height: auto ;
       min-height: 100vh;
       overflow-y: visible ;
+      background-color: #0e1113;
   }
   .device-layout {
         display: flex;
