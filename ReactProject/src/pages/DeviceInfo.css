@@ -138,72 +138,68 @@
 
 @media (max-width: 900px) {
 
-  /* מוודא שהעמוד נגלל כמו שצריך */
   .page-device {
-    height: auto !important;
-    min-height: 100vh;
-    overflow-y: visible !important;
+      height: auto ;
+      min-height: 100vh;
+      overflow-y: visible ;
   }
-
   .device-layout {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    /* המספר הגדול הזה (160px) הוא מה שיציל את המצב - רווח ביטחון ענק למטה */
-    padding: 20px 15px 160px 15px !important; 
-    gap: 15px !important;
-  }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px 15px 150px ;
+        gap: 0px;
+    }
 
-  /* הקטנת הטלפון כדי שלא יתפוס את כל המסך */
   .device-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -3px;
+        animation: none !important;
+        transform: none !important;
+    }
 
   .device-image img {
-    max-height: 25vh !important; /* גובה מקסימלי יחסי למסך */
-    width: auto !important;
+    max-height: 25vh; 
+    width: auto;
     object-fit: contain;
   }
 
   .page-title {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 15px;
   }
 
-  /* טיפול בתיבות הטקסט */
-  .info-row {
-    width: 100%;
-    font-size: 15px;
-    padding: 15px;
-    height: auto !important; /* נותן לתיבה לגדול לפי התוכן */
-  }
+    .info-row {
+        width: 100%;
+        font-size: 11px;
+        padding: 3px;
+        height: auto;
+    }
   
-  /* --- התיקון הקריטי להתנגשות בתיבה האחרונה --- */
   .special-row {
     display: flex !important;
-    flex-direction: column !important; /* מכריח את האייקונים לרדת שורה */
-    align-items: flex-start !important; /* מיישר לימין (בגלל שהעמוד בעברית) */
+    flex-direction: column ;
+    align-items: flex-start ;
     gap: 15px !important;
   }
 
   .connection-icons {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: flex-end !important; /* מיישר את האייקונים לצד שמאל של התיבה */
-    gap: 15px !important;
+    width: 100% ;
+    display: flex ;
+    justify-content: flex-end;
+    gap: 15px;
     margin-top: 5px;
   }
   
   .icon-good img, .icon-bad img {
-      width: 40px !important;
-      height: 40px !important;
+      width: 37px;
+      height: 33px; 
   }
 
-  /* החץ נשאר קבוע, אבל עכשיו יש לו "אוויר" מתחת לתוכן */
   .next-arrow {
     position: fixed;
     bottom: 20px;
@@ -212,6 +208,6 @@
   }
   
   .next-arrow img {
-    width: 55px;
+    width: 54px;
   }
 }
