@@ -138,11 +138,11 @@
 
 @media (max-width: 900px) {
 
-  .page-device {
-      height: auto ;
-      min-height: 100vh;
-      overflow-y: visible ;
-      background-color: #0e1113;
+.page-device {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    background: #000000; 
   }
   .device-layout {
         display: flex;
