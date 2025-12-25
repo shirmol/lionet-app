@@ -136,6 +136,12 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .vpn-practice-page {
+    background-color: #000000;
+    justify-content: center;
+    padding-bottom: 50px; 
+  }
+  
   .practice-header {
     text-align: center;
     z-index: 10;
@@ -161,7 +167,7 @@
 
   .phone-img {
       height: auto;
-      max-height: 65vh;
+      max-height: 60vh;
       width: 318px;
       object-fit: fill;
     }
@@ -186,4 +192,17 @@
       top: 32%;
       left: 52%;
     }
+
+  .nav-arrow {
+    position: fixed;;
+    bottom: 30px ;
+    z-index: 9999;
+  }
+
+  .nav-arrow img {
+    width: 50px;
+  }
+
+  .back-arrow { right: 20px; }
+  .next-arrow { left: 20px; }
 }
