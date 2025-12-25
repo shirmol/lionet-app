@@ -134,7 +134,49 @@
 }
 
 @media (max-width: 900px) {
+  .page-lock {
+    background-color: #000000 !important;
+    padding-bottom: 60px; 
+    justify-content: center;
+  }
+
+  
+  .lock-container {
+    padding: 20px ; 
+    width: 85%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; 
+    margin-top: -40px; 
+  }
+
+  .lock-title {
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+
+  .lock-subtitle {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .pin-display {
+    margin-bottom: 20px;
+  }
+
+  .keypad {
+    gap: 12px; 
+  }
+
+  .key-btn {
+    width: 60px;  
+    height: 60px;
+    font-size: 24px;
+  }
+
   .nav-arrow img { width: 50px; }
-  .next-arrow { left: 10px; }
-  .back-arrow { right: 10px; }
+  .next-arrow { left: 20px; bottom: 20px; }
+  .back-arrow { right: 20px; bottom: 20px; }
 }
