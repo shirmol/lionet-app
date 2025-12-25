@@ -119,12 +119,17 @@ html, body {
 @media (max-width: 768px) {
 
   .vpn-page {
-    background-color: #000000;
+    background-color: #000000 ;
+    justify-content: center; 
+    gap: 15px; 
+    padding-bottom: 100px; 
   }
+
   .vpn-video-container {
     max-width: 100%; 
     display: flex;
     justify-content: center;
+    margin-top: 0; 
   }
 
   .vpn-video-wrapper {
@@ -135,20 +140,27 @@ html, body {
 
   .vpn-title {
     font-size: 2.2rem; 
+    margin-bottom: 5px; 
   }
   
   .vpn-subtitle {
     font-size: 1.2rem;
+    margin-bottom: 5px;
   }
   
   .vpn-description {
     font-size: 1rem;
     padding: 0 10px;
+    margin-bottom: 0;
   }
-  .phone-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-}
 
+  .phone-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .nav-arrow {
+    bottom: 30px;
+  }
 }
