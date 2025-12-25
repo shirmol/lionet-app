@@ -117,7 +117,10 @@ html, body {
 
 
 @media (max-width: 768px) {
-  
+
+  .vpn-page {
+    background-color: #000000;
+  }
   .vpn-video-container {
     max-width: 100%; 
     display: flex;
