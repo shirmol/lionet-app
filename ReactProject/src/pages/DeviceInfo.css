@@ -157,15 +157,20 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-bottom: -3px;
+        min-height: 25vh;
         animation: none ;
         transform: none ;
     }
 
   .device-image img {
-    max-height: 22vh; 
-    width: auto;
-    object-fit: contain;
+      max-height: 22vh; 
+      width: auto;
+      object-fit: contain;
+      animation: none ;
+      transform: none ;
+      transform: translateZ(0);
   }
 
   .page-title {
