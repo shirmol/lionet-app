@@ -1,4 +1,4 @@
-# Lionet Training Simulator 🦁📱
+# Lionet Training Simulator 📱
 
 A realistic, interactive training simulation designed for the IDF "Lionet" device interface.
 This project provides a safe digital environment for soldiers to practice using operational applications (such as Akela, BlueWolf, VPN, and more) before using the actual device.
