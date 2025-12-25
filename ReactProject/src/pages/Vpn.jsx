@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './Vpn.css';
 import arrowIcon from '../assets/arrow-next.png'; 
-import vpnVideo from '../assets/VpnVideo.mp4';     
+import vpnVideo from '../assets/VpnVideo.mp4'; 
 
 export default function Vpn({ onNext, onBack }) {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
 
   return (
     <div className="vpn-page">
-            <div className="vpn-text-section">
+      <div className="vpn-text-section">
         <h1 className="vpn-title">חיבור ל-VPN</h1>
         
         <h2 className="vpn-subtitle">צפה בסרטון הדרכה</h2>
@@ -24,6 +24,7 @@ export default function Vpn({ onNext, onBack }) {
            <video 
              className="phone-video" 
              controls 
+             playsInline
              src={vpnVideo} 
              onEnded={() => setIsVideoEnded(true)}
            >
