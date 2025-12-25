@@ -166,7 +166,7 @@
 
   .device-image img {
     width: auto;
-    max-height: 250px; /* מקטין את הטלפון כדי להשאיר מקום לטקסט */
+    max-height: 240px; /* מקטין את הטלפון כדי להשאיר מקום לטקסט */
     object-fit: contain;
   }
 
