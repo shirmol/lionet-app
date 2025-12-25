@@ -1,0 +1,189 @@
+/* src/pages/VpnPractice.css */
+
+.vpn-practice-page {
+  direction: rtl;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #0f1115;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 23px; 
+  position: relative;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.practice-header {
+  text-align: center;
+  margin-bottom: 0.2rem; 
+  z-index: 10;
+  width: 100%; 
+}
+
+.practice-title {
+  font-size: 3rem; 
+  font-weight: bold;
+  color: #22d3ee;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  margin-top: 0;
+}
+
+.practice-instruction {
+  font-size: 2rem;
+  color: #e5e7eb;
+  margin-top: 0;
+}
+
+.phone-interactive-container {
+  position: relative;
+  z-index: 10;
+  margin-top: 0;
+  flex-grow: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+.phone-img {
+  height: 74vh;      
+  width: 320px;      
+  object-fit: fill;  
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.app-hotspot {
+    position: absolute;
+    background-color: rgba(255, 0, 127, 0.1);
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+    cursor: pointer;
+    z-index: 20;
+    animation: pulse-glow 2s infinite;
+}
+
+.vpn-icon-pos {
+    bottom: 22.2%;
+    right: 6.6%;
+    width: 49px;
+    height: 41px;
+    border-radius: 57%;
+}
+.connect-btn-pos {
+    top: 42.3%;
+    left: 11.7%;
+    transform: translateX(-50%);
+    width: 248px;
+    height: 45px;
+    border-radius: 8px;
+}
+@keyframes pulse-glow {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 0, 127, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+}
+
+.app-hotspot:hover {
+  background-color: rgba(255, 0, 127, 0.2);
+}
+
+.nav-arrow {
+  position: fixed;
+  bottom: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+}
+
+.nav-arrow img {
+  width: 60px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  transition: transform 0.2s;
+  display: block;
+}
+
+.back-arrow { right: 15px; }
+.back-arrow img { transform: rotate(180deg); }
+.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
+.next-arrow { left: 15px; }
+.next-arrow:hover img { transform: scale(1.1); }
+
+.timer-overlay {
+    position: absolute;
+    top: 39%;
+    left: 52%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 30;
+    background-color: transparent;
+    width: 100%;
+}
+.timer-numbers {
+  font-family: sans-serif; 
+  font-size: 3rem;   
+  font-weight: bold;
+  color: #ff007f;      
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media only screen and (max-width: 768px) {
+  .practice-header {
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 40px; 
+  }
+  
+  .practice-title { 
+      font-size: 1.6rem; 
+      line-height: 1.2;
+      margin-bottom: 5px; 
+  }
+  .practice-instruction { 
+      font-size: 1.2rem;
+  }
+
+  .phone-interactive-container {
+      width: 318px; 
+      height: auto; 
+      aspect-ratio: auto; 
+  }
+
+  .phone-img {
+      height: auto;
+      max-height: 65vh;
+      width: 318px;
+      object-fit: fill;
+    }
+
+
+  .vpn-icon-pos {
+      bottom: 35.1%;
+      right: 6.7%;
+      width: 49px;
+      height: 41px;
+      border-radius: 57%;
+    }
+  .connect-btn-pos {
+      top: 35.2%;
+      left: 11.4%;
+      transform: translateX(-50%);
+      width: 248px;
+      height: 45px;
+      border-radius: 8px;
+    }
+  .timer-overlay {
+      top: 32%;
+      left: 52%;
+    }
+}

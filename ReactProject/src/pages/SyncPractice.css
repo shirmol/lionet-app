@@ -1,0 +1,262 @@
+/* SyncPractice.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sync-practice-page {
+  direction: rtl;
+  height: 100vh;      
+  height: 100dvh;     
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #0f1115;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 10px; 
+  padding-bottom: 60px; 
+  position: relative;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.sync-header {
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  flex-shrink: 0; 
+  margin-top: 40px;
+}
+
+.sync-title {
+  font-size: 3rem; 
+  font-weight: bold;
+  color: #22d3ee;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  margin-top: 0;
+}
+
+.sync-instruction {
+  font-size: 2rem;
+  color: #e5e7eb;
+  margin-top: 0;
+}
+
+.sync-phone-container {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1; 
+}
+
+.sync-phone-img {
+  height: 70vh;      
+  width: 320px;      
+  object-fit: fill;  
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.blue-hotspot {
+    position: absolute;
+    background-color: rgba(34, 211, 238, 0.1); 
+    border: 2px solid #22d3ee;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+    cursor: pointer;
+    z-index: 20;
+    animation: pulse-glow-blue 2s infinite; 
+}
+
+@keyframes pulse-glow-blue {
+  0% { transform: translateX(-50%) scale(0.9); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); }
+  70% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
+  100% { transform: translateX(-50%) scale(0.9); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+}
+
+.blue-hotspot:hover {
+  background-color: rgba(34, 211, 238, 0.2);
+}
+
+.hub-icon-pos {
+    bottom: 16.7%;       
+    left: 61.5%;          
+    transform: translateX(-50%);
+    width: 49px;
+    height: 39px;
+    border-radius: 50%; 
+}
+
+.sync-btn-pos {
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 355px;
+    height: 47px;
+    border-radius: 10px;
+    animation: pulse-glow-center-blue 2s infinite;
+}
+
+.final-sync-pos {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 327px;
+    height: 50.5px;
+    border-radius: 10px;
+    animation: pulse-glow-center-blue 2s infinite;
+}
+
+@keyframes pulse-glow-center-blue {
+  0% { transform: translate(-50%, -50%) scale(0.75); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); }
+  70% { transform: translate(-50%, -50%) scale(0.77); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
+  100% { transform: translate(-50%, -50%) scale(0.75); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+}
+
+.sync-nav-arrow {
+  position: absolute; 
+  bottom: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.sync-nav-arrow img {
+  width: 60px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  transition: transform 0.2s;
+  display: block;
+}
+
+.sync-nav-arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.back-arrow { right: 15px; }
+.back-arrow img { transform: rotate(180deg); }
+.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
+.next-arrow { left: 15px; }
+.next-arrow:hover img { transform: scale(1.1); }
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-modal {
+    background: linear-gradient(135deg, #0f1816 0%, #1a2e2b 100%);
+    border: 3px solid #284440;
+    border-radius: 40px;
+    padding: 100px 50px; 
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(34, 211, 238, 0.4);
+    color: white;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 26px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-color: white;
+}
+
+.modal-header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; 
+    margin-bottom: 40px; 
+    margin-top: 10px;
+}
+
+.modal-icon {
+    font-size: 6rem; 
+    color: #4ade80;
+    line-height: 1;
+}
+
+.modal-title {
+    font-size: 5rem; 
+    margin: 0;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.modal-text {
+    font-size: 2.5rem; 
+    color: #cbd5e1;
+}
+
+@media only screen and (max-width: 768px) {
+  .sync-header { margin-top: 40px; }
+  .sync-title { font-size: 1.6rem; line-height: 1.2; margin-bottom: 5px; }
+  .sync-instruction { font-size: 1.2rem; margin-bottom: 10px; }
+  .sync-phone-container { width: 318px; height: auto; flex-grow: 1; display: flex; align-items: center; padding-bottom: 40px; }
+  .sync-phone-img { height: auto; max-height: 62vh; width: 318px; object-fit: fill; }
+  .hub-icon-pos { bottom: 26.9%; width: 47px; height: 40px; }
+  
+  .final-sync-pos {
+    top: 71%;
+    left: 50.5%;
+    width: 327px;
+    height: 50.5px;
+    }
+  .sync-btn-pos {
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 355px;
+    height: 47px;
+    border-radius: 10px;
+    animation: pulse-glow-center-blue 2s infinite;
+  }
+  .success-modal { padding: 50px 20px; max-width: 95%; }
+  .modal-header-row {  margin-bottom: 20px; }
+  .modal-title { font-size: 2.8rem; }
+  .modal-icon { font-size: 3.5rem; }
+  .modal-text { font-size: 1.5rem; }
+  .modal-close-btn { top: 15px; right: 15px; width: 35px; height: 35px; font-size: 20px;}
+}

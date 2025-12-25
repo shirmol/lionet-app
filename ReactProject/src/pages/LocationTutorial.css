@@ -1,0 +1,131 @@
+/* src/pages/LocationTutorial.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.loc-page {
+  direction: rtl;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #0f1115;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; 
+  text-align: center;
+  padding: 0; 
+  padding-bottom: 60px;
+  position: relative;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.loc-text-section {
+  z-index: 10;
+  max-width: 700px;
+  padding: 0 20px; 
+  margin-top: 20px;
+}
+
+.loc-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #22d3ee;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+.loc-subtitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.loc-description {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.loc-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px; 
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; 
+}
+
+.loc-video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  background-color: black;
+  
+  border-radius: 16px; 
+  border: 1px solid #1f2937;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.loc-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loc-nav-arrow {
+  position: absolute;
+  bottom: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+}
+
+.loc-nav-arrow img {
+  width: 60px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  transition: transform 0.2s;
+  display: block;
+}
+
+.loc-next-arrow { left: 20px; }
+.loc-next-arrow:hover img { transform: scale(1.1); }
+
+.loc-back-arrow { right: 20px; }
+.loc-back-arrow img { transform: rotate(180deg); }
+.loc-back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
+
+@media (max-width: 768px) {
+  
+  .loc-page {
+    justify-content: center;
+    gap: 20px; 
+    }
+
+  .loc-video-container {
+    width: 95%; 
+    max-width: 95%; 
+    }
+
+  .loc-title { font-size: 2.2rem; }
+  .loc-subtitle { font-size: 1.4rem; }
+  .loc-description { font-size: 1.1rem; }
+  }

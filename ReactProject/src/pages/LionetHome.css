@@ -1,0 +1,251 @@
+/* src/pages/LionetHome.css */
+
+.lh-container {
+  direction: rtl;
+  height: 100vh; width: 100vw;
+  background-color: #0f1115; color: white;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding-top: 40px; padding-bottom: 60px;
+  position: relative; font-family: sans-serif; overflow: hidden;
+}
+
+.lh-text-area { text-align: center; z-index: 10; margin-bottom: 20px; }
+.lh-main-title { font-size: 3.5rem; font-weight: bold; color: #22d3ee; margin: 0 0 15px 0; text-shadow: 0 0 15px rgba(34, 211, 238, 0.4); }
+.lh-sub-text { font-size: 1.8rem; color: #e2e8f0; margin: 0; line-height: 1.4; }
+
+.lh-device-wrapper {
+  position: relative; z-index: 10; 
+  display: flex; justify-content: center; align-items: center;
+  width: auto; max-width: fit-content; margin: 0 auto;
+}
+
+.lh-device-image {
+    height: 68vh; width: 306px; margin-top: 0px;
+    object-fit: fill; display: block;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+}
+
+.lh-hotspot {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 14px;
+    z-index: 20;
+    background-color: rgba(34, 211, 238, 0.02); 
+    border: 1px solid rgba(1, 5, 5, 0.15); 
+    transition: all 0.2s ease;
+}
+
+.lh-hotspot:hover {
+    background-color: rgba(34, 211, 238, 0.15); 
+    border: 1px solid rgba(34, 211, 238, 0.8); 
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.3); 
+}
+
+.lh-pos-akela {
+    top: 22%;
+    left: 8%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-bluewolf {
+    top: 22%;
+    left: 29.6%;
+    width: 18.3%;
+    height: 12%;
+}
+.lh-pos-alpha {
+    top: 22%;
+    left: 51.8%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-rocket {
+    top: 22%;
+    left: 72%;
+    width: 21%;
+    height: 12%;
+}
+.lh-pos-vpn {
+    top: 38%;
+    left: 8%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-hub {
+    top: 38%;
+    left: 29.6%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-deviceinfo {
+    top: 38%;
+    left: 50.8%;
+    width: 20.7%;
+    height: 13%;
+}
+.lh-pos-easytalk {
+    top: 38%;
+    left: 72.9%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-whitewolf {
+    top: 53.7%;
+    left: 7%;
+    width: 21.1%;
+    height: 12%;
+}
+.lh-pos-fort {
+    top: 53.7%;
+    left: 29.6%;
+    width: 18%;
+    height: 12%;
+}
+.lh-pos-nx {
+    top: 53.7%;
+    left: 50.2%;
+    width: 22%;
+    height: 12%;
+}
+.lh-pos-wolfpack {
+    top: 53.7%;
+    left: 73.5%;
+    width: 18%;
+    height: 12%;
+}
+
+.lh-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); z-index: 999;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.lh-info-card {
+    background: linear-gradient(180deg, #1e3a5f 0%, #0b1a2b 100%);
+    border: 2px solid #22d3ee; border-radius: 15px;
+    padding: 30px; width: 90%; max-width: 500px;
+    text-align: center; position: relative;
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.4); color: white;
+}
+
+.lh-card-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(34, 211, 238, 0.1); 
+    border: 2px solid rgba(34, 211, 238, 0.5); 
+    color: #22d3ee;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.lh-card-close-btn:hover {
+    background: rgba(34, 211, 238, 0.3);
+    border-color: #22d3ee;
+    color: white;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+    transform: scale(1.1); 
+}
+
+.lh-card-title { font-size: 2.2rem; color: #22d3ee; margin-bottom: 15px; font-weight: bold; }
+.lh-card-desc { font-size: 1.4rem; line-height: 1.5; color: #e2e8f0; margin-bottom: 30px; }
+.lh-card-action-btn {
+    background: rgba(34, 211, 238, 0.15); border: 1px solid #22d3ee;
+    color: #22d3ee; padding: 10px 20px; font-size: 1.2rem; border-radius: 8px; cursor: pointer; width: 100%;
+}
+.lh-card-action-btn:hover { background: #22d3ee; color: black; }
+.lh-arrow-btn { position: absolute; bottom: 20px; background: none; border: none; cursor: pointer; z-index: 100; padding: 0; }
+.lh-arrow-btn img { width: 60px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); transition: transform 0.2s ease; }
+.lh-arrow-back { right: 20px; left: auto; }
+.lh-arrow-back img { transform: rotate(180deg); }
+.lh-arrow-back:hover img { transform: rotate(180deg) scale(1.1); }
+.lh-arrow-next { left: 20px; right: auto; }
+.lh-arrow-next:hover img { transform: scale(1.1); }
+
+@media only screen and (max-width: 768px) {
+    .lh-container { padding-top: 30px; }
+    .lh-main-title { font-size: 1.7rem; padding: 0 20px; }
+    .lh-sub-text { font-size: 1.1rem; padding: 0 20px; }
+    .lh-device-image { height: auto; max-height: 70vh; width: 90%; object-fit: contain; }
+  
+    .lh-pos-akela {
+        top: 22%;
+        left: 10%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-bluewolf {
+        top: 22%;
+        left: 30%;
+        width: 18.3%;
+        height: 12%;
+}
+    .lh-pos-alpha {
+        top: 22%;
+        left: 50.1%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-rocket {
+        top: 22%;
+        left: 69%;
+        width: 21%;
+        height: 12%;
+    }
+    .lh-pos-vpn {
+        top: 38%;
+        left: 10%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-hub {
+        top: 38%;
+        left: 30.2%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-deviceinfo {
+        top: 38%;
+        left: 49%;
+        width: 20.7%;
+        height: 13%;
+    }
+    .lh-pos-easytalk {
+        top: 38%;
+        left: 70.9%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-whitewolf {
+        top: 53.7%;
+        left: 9%;
+        width: 21.1%;
+        height: 12%;
+    }
+    .lh-pos-fort {
+        top: 53.7%;
+        left: 31%;
+        width: 18%;
+        height: 12%;
+    }
+    .lh-pos-nx {
+        top: 53.7%;
+        left: 50.1%;
+        width: 20%;
+        height: 12%;
+    }
+    .lh-pos-wolfpack {
+        top: 53.7%;
+        left: 71.5%;
+        width: 18%;
+        height: 12%;
+    }
+    }
