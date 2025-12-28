@@ -98,8 +98,8 @@
 
 .next-arrow {
   position: fixed;
-  bottom: 15px;
-  left: 15px;
+  bottom: 20px;
+  left: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -112,17 +112,12 @@
   transition: transform 0.2s;
 }
 
-
-.next-arrow {
-  left: 15px; 
-}
-
 .next-arrow:hover img {
   transform: scale(1.1);
 }
 
 .back-arrow {
-  right: 15px; 
+  right: 20px; 
 }
 
 .back-arrow img {
