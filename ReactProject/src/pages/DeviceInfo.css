@@ -95,7 +95,7 @@
 
 .icon-good img,
 .icon-bad img {
-  width: 55x;
+  width: 55px;
   height: 55px;
 }
 
@@ -139,11 +139,10 @@
 @media (max-width: 900px) {
 
   .page-device {
-    min-height: 100dvh;
     height: auto;
+    min-height: 100vh;
     overflow-y: visible;
-    background: #000000;
-    padding-bottom: 80px; /* מקום לחץ בתחתית */
+    background: #000000; 
   }
 
   .device-layout {
@@ -151,8 +150,8 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 16px 12px 110px;
-    gap: 8px;
+    padding: 20px 15px 150px;
+    gap: 0px;
   }
 
   .device-image {
@@ -167,10 +166,12 @@
   }
 
   .device-image img {
-    width: min(260px, 70vw);
-    max-height: none;
+    max-height: 22vh;
+    width: auto;
     object-fit: contain;
+    animation: none;
     transform: none;
+    transform: translateZ(0);
   }
 
   .page-title {
@@ -181,8 +182,8 @@
 
   .info-row {
     width: 100%;
-    font-size: 14px;
-    padding: 6px 8px;
+    font-size: 13px;
+    padding: 3px;
     height: auto;
   }
 
@@ -190,7 +191,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 1px;
   }
 
   .connection-icons {
@@ -198,7 +199,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 15px;
-    margin-top: 0;
+    margin-top: 0px;
   }
 
   .icon-good img,
@@ -209,8 +210,8 @@
 
   .next-arrow {
     position: fixed;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    left: 16px;
+    bottom: 20px;
+    left: 20px;
     z-index: 9999;
   }
 
