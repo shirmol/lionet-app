@@ -208,7 +208,7 @@
   }
 
   .vpn-icon-pos {
-    bottom: 35.1%;
+    bottom: 30%;
     right: 6.7%;
     width: 49px;
     height: 41px;
@@ -258,14 +258,20 @@
 
   .phone-img {
     width: 300px;
-    max-height: 65vh;
+    max-height: 62vh;
   }
-
+.vpn-icon-pos {
+    bottom: 35.1%;
+    right: 6.7%;
+    width: 49px;
+    height: 41px;
+    border-radius: 57%;
+  }
   .nav-arrow img {
     width: 34px;
   }
     .vpn-icon-pos {
-    bottom: 38.1%;
+    bottom: 32%;
     right: 6.7%;
     width: 49px;
     height: 41px;
