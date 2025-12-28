@@ -234,7 +234,7 @@
   }
 
   .next-arrow {
-    bottom: calc(10px + env(safe-area-inset-bottom));
+    bottom: 40px;
   }
 }
 }

@@ -205,4 +205,31 @@
 
   .back-arrow { right: 20px; }
   .next-arrow { left: 20px; }
+@media only screen and (max-width: 360px) {
+  .practice-title {
+    font-size: 1.6rem;
+  }
+
+  .practice-instruction {
+    font-size: 1.05rem;
+  }
+
+  .phone-interactive-container {
+    width: 300px;
+  }
+
+  .phone-img {
+    width: 300px;
+    max-height: 52vh;   /* קצת יותר קטן שלא יחתך */
+  }
+
+  .nav-arrow img {
+    width: 40px;
+  }
+
+  .nav-arrow {
+    bottom: 20px;
+  }
+}
+
 }
