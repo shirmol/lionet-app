@@ -218,4 +218,23 @@
   .next-arrow img {
     width: 54px;
   }
+  @media (max-width: 390px) {
+
+  .device-image img {
+    max-height: 18vh;
+  }
+
+  .page-title {
+    margin-top: 6px;
+    font-size: 18px;
+  }
+
+  .info-row {
+    font-size: 12.5px;
+  }
+
+  .next-arrow {
+    bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+}
 }
