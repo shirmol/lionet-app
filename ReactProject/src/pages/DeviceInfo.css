@@ -138,81 +138,82 @@
 
 @media (max-width: 900px) {
 
-.page-device {
+  .page-device {
+    min-height: 100dvh;
     height: auto;
-    min-height: 100vh;
     overflow-y: visible;
-    background: #000000; 
+    background: #000000;
+    padding-bottom: 80px; /* מקום לחץ בתחתית */
   }
+
   .device-layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 20px 15px 150px ;
-        gap: 0px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 16px 12px 110px;
+    gap: 8px;
+  }
 
   .device-image {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: -3px;
-        min-height: 2vh;
-        animation: none ;
-        transform: none ;
-    }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -3px;
+    min-height: 2vh;
+    animation: none;
+    transform: none;
+  }
 
   .device-image img {
-      max-height: 22vh; 
-      width: auto;
-      object-fit: contain;
-      animation: none ;
-      transform: none ;
-      transform: translateZ(0);
+    width: min(260px, 70vw);
+    max-height: none;
+    object-fit: contain;
+    transform: none;
   }
 
   .page-title {
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
-    .info-row {
-        width: 100%;
-        font-size: 13px;
-        padding: 3px;
-        height: auto;
-    }
-  
+  .info-row {
+    width: 100%;
+    font-size: 14px;
+    padding: 6px 8px;
+    height: auto;
+  }
+
   .special-row {
     display: flex;
-    flex-direction: column ;
-    align-items: flex-start ;
-    gap:1px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .connection-icons {
-    width: 100% ;
-    display: flex ;
+    width: 100%;
+    display: flex;
     justify-content: flex-end;
     gap: 15px;
-    margin-top: 0px;
+    margin-top: 0;
   }
-  
-  .icon-good img, .icon-bad img {
-      width: 37px;
-      height: 33px; 
+
+  .icon-good img,
+  .icon-bad img {
+    width: 37px;
+    height: 33px;
   }
 
   .next-arrow {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    left: 16px;
     z-index: 9999;
   }
-  
+
   .next-arrow img {
     width: 54px;
   }
