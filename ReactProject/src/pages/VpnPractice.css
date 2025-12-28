@@ -283,16 +283,14 @@
   .nav-arrow img {
     width: 34px;
   }
+/* ----------- דסקטופ – להרים את החצים מעל שורת המשימות ----------- */
 @media only screen and (min-width: 769px) {
   .nav-arrow {
-    position: fixed;
-    bottom: 24px;   /* רואים ברור מעל הקצה התחתון */
-    z-index: 9999;
-    display: block;
+    bottom: 80px;   /* מרים את החצים למעלה במסך גדול */
   }
 
   .nav-arrow img {
-    width: 60px;    /* גודל נוח למחשב */
+    width: 60px;    /* גודל נוח לדסקטופ */
   }
 
   .back-arrow {
