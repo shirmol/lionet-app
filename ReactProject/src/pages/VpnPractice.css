@@ -262,7 +262,7 @@
   }
 .vpn-icon-pos {
     bottom: 16%;
-    right: 6.6%;
+    right: 6.5.7%;
     width: 49px;
     height: 41px;
     border-radius: 57%;
@@ -283,6 +283,25 @@
   .nav-arrow img {
     width: 34px;
   }
+@media only screen and (min-width: 769px) {
+  .nav-arrow {
+    position: fixed;
+    bottom: 24px;   /* רואים ברור מעל הקצה התחתון */
+    z-index: 9999;
+    display: block;
+  }
 
+  .nav-arrow img {
+    width: 60px;    /* גודל נוח למחשב */
+  }
+
+  .back-arrow {
+    right: 24px;
+  }
+
+  .next-arrow {
+    left: 24px;
+  }
+}
 
 }
