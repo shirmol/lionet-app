@@ -49,7 +49,6 @@ export default function LockScreen({ onNext, onBack }) {
             className={getButtonClass(0)}
             style={getButtonStyle(0)}
           >
-            0
           </div>
           
           <div className="key-placeholder"></div>

@@ -96,7 +96,6 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-/* === הגדרות חצים (מחשב) - גובה 15px === */
 .nav-arrow {
   position: fixed; 
   bottom: 15px;    
@@ -134,7 +133,6 @@
   transform: rotate(180deg) scale(1.1);
 }
 
-/* === מובייל (עד 900px) === */
 @media (max-width: 900px) {
   .page-lock {
     background-color: #000000 !important;
@@ -177,22 +175,14 @@
     font-size: 24px;
   }
 
-  /* תיקון חצים למובייל - גובה 20px וגודל 40px */
-  .nav-arrow {
-    bottom: 20px;
-  }
-
   .nav-arrow img {
     width: 40px;
   }
 
-  .next-arrow { left: 20px; }
-  .back-arrow { right: 20px; }
-
-} /* סוגר את המדיה של ה-900 */
-
-
-/* === מובייל קטן (עד 400px) === */
+  .next-arrow,
+  .back-arrow {
+    bottom: 14px;
+  }
 @media (max-width: 400px) {
 
   .lock-container {
@@ -235,7 +225,9 @@
     width: 30px;
   }
 
-  .nav-arrow {
-    bottom: 40px;
+  .next-arrow,
+  .back-arrow {
+    bottom: 16px;
   }
+}
 }
