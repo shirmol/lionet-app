@@ -96,10 +96,10 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-/* === הגדרות חצים (מחשב) - חזרנו לשמות הרגילים === */
+/* === הגדרות חצים (מחשב) - גובה 15px === */
 .nav-arrow {
   position: fixed; 
-  bottom: 15px;    /* גובה למחשב */
+  bottom: 15px;    
   background: none;
   border: none;
   cursor: pointer;
@@ -133,7 +133,6 @@
 .back-arrow:hover img {
   transform: rotate(180deg) scale(1.1);
 }
-
 
 /* === מובייל (עד 900px) === */
 @media (max-width: 900px) {
@@ -236,7 +235,6 @@
     width: 30px;
   }
 
-  /* תיקון חצים למסך קטן - עולים ל-40px */
   .nav-arrow {
     bottom: 40px;
   }

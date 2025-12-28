@@ -92,15 +92,9 @@ html, body {
   height: 100%;
   object-fit: cover; 
 }
-
-/* ============================================================
-   חצים - מיושר לפי הסטנדרט (DeviceInfo / LockScreen)
-   ============================================================ */
-
-/* --- מחשב (Desktop) --- */
 .nav-arrow {
-  position: fixed;   /* שינוי ל-fixed לאחידות */
-  bottom: 15px;      /* גובה תקני למחשב */
+  position: absolute; 
+  bottom: 20px;    
   background: none;
   border: none;
   cursor: pointer;
@@ -115,21 +109,13 @@ html, body {
   display: block;
 }
 
-.next-arrow { 
-  left: 15px;        /* רווח תקני למחשב */
-}
+.next-arrow { left: 20px; }
 .next-arrow:hover img { transform: scale(1.1); }
-
-.back-arrow { 
-  right: 15px;       /* רווח תקני למחשב */
-}
+.back-arrow { right: 20px; }
 .back-arrow img { transform: rotate(180deg); }
 .back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
 
 
-/* ============================================================
-   מובייל (Mobile)
-   ============================================================ */
 @media (max-width: 768px) {
 
   .vpn-page {
@@ -174,25 +160,7 @@ html, body {
     object-fit: cover; 
   }
   
-  /* --- חצים במובייל --- */
   .nav-arrow {
-    bottom: 20px; /* גובה תקני למובייל */
-  }
-  
-  .nav-arrow img {
-    width: 40px;  /* הקטנה למובייל */
-  }
-  
-  .next-arrow { left: 20px; }
-  .back-arrow { right: 20px; }
-}
-
-/* ============================================================
-   מובייל קטן (Small Mobile - עד 400px)
-   הוספתי את החלק הזה כי הוא היה חסר
-   ============================================================ */
-@media (max-width: 400px) {
-  .nav-arrow {
-    bottom: 40px; /* עולה למעלה כדי לא להתנגש עם הבר התחתון */
+    bottom: 30px;
   }
 }
