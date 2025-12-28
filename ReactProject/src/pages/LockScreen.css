@@ -96,8 +96,10 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-/* === הגדרות חצים (מחשב) - גובה 15px === */
-.nav-arrow {
+/* === הגדרות חצים ייחודיות למסך נעילה === */
+/* שיניתי את השמות כדי למנוע התנגשות */
+
+.lock-nav-arrow {
   position: fixed; 
   bottom: 15px;    
   background: none;
@@ -107,30 +109,30 @@
   padding: 0;      
 }
 
-.nav-arrow img {
+.lock-nav-arrow img {
   width: 60px; 
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
   transition: transform 0.2s;
   display: block;
 }
 
-.next-arrow {
+.lock-next-arrow {
   left: 15px; 
 }
 
-.next-arrow:hover img {
+.lock-next-arrow:hover img {
   transform: scale(1.1);
 }
 
-.back-arrow {
+.lock-back-arrow {
   right: 15px; 
 }
 
-.back-arrow img {
+.lock-back-arrow img {
   transform: rotate(180deg);
 }
 
-.back-arrow:hover img {
+.lock-back-arrow:hover img {
   transform: rotate(180deg) scale(1.1);
 }
 
@@ -177,19 +179,19 @@
     font-size: 24px;
   }
 
-  /* תיקון חצים למובייל - גובה 20px וגודל 40px */
-  .nav-arrow {
+  /* עדכון שמות המחלקות גם במובייל */
+  .lock-nav-arrow {
     bottom: 20px;
   }
 
-  .nav-arrow img {
+  .lock-nav-arrow img {
     width: 40px;
   }
 
-  .next-arrow { left: 20px; }
-  .back-arrow { right: 20px; }
+  .lock-next-arrow { left: 20px; }
+  .lock-back-arrow { right: 20px; }
 
-} /* סוגר את המדיה של ה-900 */
+}
 
 
 /* === מובייל קטן (עד 400px) === */
@@ -231,11 +233,11 @@
     font-size: 22px;
   }
 
-  .nav-arrow img {
+  .lock-nav-arrow img {
     width: 30px;
   }
 
-  .nav-arrow {
+  .lock-nav-arrow {
     bottom: 40px;
   }
 }

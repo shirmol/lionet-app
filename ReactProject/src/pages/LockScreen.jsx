@@ -56,10 +56,12 @@ export default function LockScreen({ onNext, onBack }) {
         </div>
 
       </div>
-      <button className="nav-arrow back-arrow" onClick={onBack}>
+      
+      {/* עדכנתי כאן את שמות המחלקות */}
+      <button className="lock-nav-arrow lock-back-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
-      <button className="nav-arrow next-arrow" onClick={onNext}>
+      <button className="lock-nav-arrow lock-next-arrow" onClick={onNext}>
         <img src={arrowIcon} alt="המשך" />
       </button>
 
