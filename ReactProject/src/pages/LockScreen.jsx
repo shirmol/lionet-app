@@ -49,18 +49,17 @@ export default function LockScreen({ onNext, onBack }) {
             className={getButtonClass(0)}
             style={getButtonStyle(0)}
           >
+            0
           </div>
           
           <div className="key-placeholder"></div>
         </div>
 
       </div>
-      
-      {/* עדכנתי כאן את שמות המחלקות */}
-      <button className="lock-nav-arrow lock-back-arrow" onClick={onBack}>
+      <button className="nav-arrow back-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
-      <button className="lock-nav-arrow lock-next-arrow" onClick={onNext}>
+      <button className="nav-arrow next-arrow" onClick={onNext}>
         <img src={arrowIcon} alt="המשך" />
       </button>
 
