@@ -96,12 +96,10 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-/* === הגדרות חצים ייחודיות למסך נעילה === */
-/* שיניתי את השמות כדי למנוע התנגשות */
-
-.lock-nav-arrow {
+/* === הגדרות חצים (מחשב) - חזרנו לשמות הרגילים === */
+.nav-arrow {
   position: fixed; 
-  bottom: 15px;    
+  bottom: 15px;    /* גובה למחשב */
   background: none;
   border: none;
   cursor: pointer;
@@ -109,32 +107,33 @@
   padding: 0;      
 }
 
-.lock-nav-arrow img {
+.nav-arrow img {
   width: 60px; 
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
   transition: transform 0.2s;
   display: block;
 }
 
-.lock-next-arrow {
+.next-arrow {
   left: 15px; 
 }
 
-.lock-next-arrow:hover img {
+.next-arrow:hover img {
   transform: scale(1.1);
 }
 
-.lock-back-arrow {
+.back-arrow {
   right: 15px; 
 }
 
-.lock-back-arrow img {
+.back-arrow img {
   transform: rotate(180deg);
 }
 
-.lock-back-arrow:hover img {
+.back-arrow:hover img {
   transform: rotate(180deg) scale(1.1);
 }
+
 
 /* === מובייל (עד 900px) === */
 @media (max-width: 900px) {
@@ -179,19 +178,19 @@
     font-size: 24px;
   }
 
-  /* עדכון שמות המחלקות גם במובייל */
-  .lock-nav-arrow {
+  /* תיקון חצים למובייל - גובה 20px וגודל 40px */
+  .nav-arrow {
     bottom: 20px;
   }
 
-  .lock-nav-arrow img {
+  .nav-arrow img {
     width: 40px;
   }
 
-  .lock-next-arrow { left: 20px; }
-  .lock-back-arrow { right: 20px; }
+  .next-arrow { left: 20px; }
+  .back-arrow { right: 20px; }
 
-}
+} /* סוגר את המדיה של ה-900 */
 
 
 /* === מובייל קטן (עד 400px) === */
@@ -233,11 +232,12 @@
     font-size: 22px;
   }
 
-  .lock-nav-arrow img {
+  .nav-arrow img {
     width: 30px;
   }
 
-  .lock-nav-arrow {
+  /* תיקון חצים למסך קטן - עולים ל-40px */
+  .nav-arrow {
     bottom: 40px;
   }
 }
