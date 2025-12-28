@@ -134,87 +134,74 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === התאמות לטלפון === */
-@media (max-width: 900px) {
-
-  .page-device {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: visible;
-    background: #000000 !important; /* רקע שחור */
-  }
-
-  .device-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    /* הריפוד הגדול למטה (150px) מונע מהחץ לעלות על הטקסט */
-    padding: 20px 15px 150px; 
-    gap: 0px;
-  }
-
-  .device-image {
-    width: 100%;
-    display: flex;
+@media only screen and (max-width: 768px) {
+  .vpn-practice-page {
+    background-color: #000000;
     justify-content: center;
-    align-items: center;
-    margin-bottom: -3px;
-    min-height: 22vh;
-    animation: none;
-    transform: none;
+    padding-bottom: 80px; 
+    height: 100dvh;
   }
-
-  .device-image img {
-    max-height: 22vh; 
-    width: auto;
-    object-fit: contain;
-    animation: none;
-    transform: none;
-    transform: translateZ(0);
-  }
-
-  .page-title {
-    font-size: 20px;
+  
+  .practice-header {
     text-align: center;
-    margin-bottom: 15px;
-  }
-
-  .info-row {
+    z-index: 10;
     width: 100%;
-    font-size: 13px;
-    padding: 10px; /* קצת יותר אוויר */
-    height: auto;
+    flex-shrink: 0;
+    margin-top: 10px; 
   }
   
-  .special-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+  .practice-title { 
+      font-size: 1.5rem; 
+      line-height: 1.2;
+      margin-bottom: 5px; 
+  }
+  .practice-instruction { 
+      font-size: 1.1rem;
   }
 
-  .connection-icons {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 0px;
-  }
-  
-  .icon-good img, .icon-bad img {
-      width: 37px;
-      height: 33px; 
+  .phone-interactive-container {
+      width: 270px;
+      height: auto; 
+      aspect-ratio: auto; 
+      margin-bottom: 10px;
   }
 
-  .next-arrow {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
+  .phone-img {
+      height: auto;
+      max-height: 50vh;
+      width: 100%;
+      object-fit: contain;
+  }
+
+  .vpn-icon-pos {
+      bottom: 22%;
+      right: 7%;
+      width: 15%;
+      height: 10%;
+  }
+  .connect-btn-pos {
+      top: 42%;
+      left: 12%;
+      width: 76%;
+      height: 8%;
   }
   
-  .next-arrow img {
-    width: 54px;
+  .timer-overlay {
+      top: 35%;
+      left: 50%;
   }
+
+  .nav-arrow {
+    position: fixed; 
+    bottom: 40px !important; 
+    z-index: 99999 !important; 
+  }
+
+  .nav-arrow img {
+    width: 50px; 
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+  }
+
+  .back-arrow { right: 20px; }
+  .next-arrow { left: 20px; }
 }
