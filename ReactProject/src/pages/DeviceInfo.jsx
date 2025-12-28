@@ -1,5 +1,5 @@
-import "./DeviceInfo.css";
 import React from "react";
+import "./DeviceInfo.css"; 
 import lockscreen from '../assets/lockscreen.png';
 import arrowNext from '../assets/arrow-next.png';
 import bluetooth from '../assets/bluetooth.jpg';
@@ -9,10 +9,10 @@ export default function DeviceInfo({ onNext }) {
   return (
     <div className="page-device">
       <div className="device-layout">
-        <div className="device-image" loading="eager"   
-           decoding="sync">
+        <div className="device-image" loading="eager" decoding="sync">
           <img src={lockscreen} alt="מסך נעילה של המכשיר" />
         </div>
+
         <div className="device-info">
           <h1 className="page-title">היכרות עם המכשיר</h1>
 
@@ -31,14 +31,12 @@ export default function DeviceInfo({ onNext }) {
                 <b>Samsung Galaxy</b> (נרכש ע"י צה״ל)
               </span>
             </div>
-
             <div className="info-row fade-item item-3">
               <span className="info-title">אבטחה</span>
               <span className="info-value">
                 המכשיר הוא אישי ובעל סיווג ביטחוני <b>״שמור״</b>.
               </span>
             </div>
-
             <div className="info-row fade-item item-4 special-row">
               <div className="text-content">
                 <span className="info-title">חיבורים מוגבלים</span>
@@ -57,8 +55,9 @@ export default function DeviceInfo({ onNext }) {
                   <img src={charger} alt="מטען מותר" />
                 </div>
               </div>
-
             </div>
+
+            {/* שורה 5: סלולר */}
             <div className="info-row fade-item item-6">
               <span className="info-title">פריסת סלולר</span>
               <span className="info-value">
@@ -70,7 +69,6 @@ export default function DeviceInfo({ onNext }) {
           </div>
         </div>
       </div>
-
       <button className="next-arrow" onClick={onNext}>
         <img src={arrowNext} alt="לעמוד הבא" />
       </button>

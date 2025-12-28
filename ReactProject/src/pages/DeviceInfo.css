@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box; 
 }
@@ -95,7 +94,7 @@
 
 .icon-good img,
 .icon-bad img {
-  width: 55x;
+  width: 55px; /* תיקנתי כאן שגיאת כתיב קטנה מ-55x ל-55px */
   height: 55px;
 }
 
@@ -135,67 +134,69 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-
+/* === התאמות לטלפון === */
 @media (max-width: 900px) {
 
-.page-device {
+  .page-device {
     height: auto;
     min-height: 100vh;
     overflow-y: visible;
-    background: #000000; 
+    background: #000000 !important; /* רקע שחור */
   }
+
   .device-layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 20px 15px 150px ;
-        gap: 0px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* הריפוד הגדול למטה (150px) מונע מהחץ לעלות על הטקסט */
+    padding: 20px 15px 150px; 
+    gap: 0px;
+  }
 
   .device-image {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: -3px;
-        min-height: 22vh;
-        animation: none ;
-        transform: none ;
-    }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -3px;
+    min-height: 22vh;
+    animation: none;
+    transform: none;
+  }
 
   .device-image img {
-      max-height: 22vh; 
-      width: auto;
-      object-fit: contain;
-      animation: none ;
-      transform: none ;
-      transform: translateZ(0);
+    max-height: 22vh; 
+    width: auto;
+    object-fit: contain;
+    animation: none;
+    transform: none;
+    transform: translateZ(0);
   }
 
   .page-title {
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
-    .info-row {
-        width: 100%;
-        font-size: 13px;
-        padding: 3px;
-        height: auto;
-    }
+  .info-row {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px; /* קצת יותר אוויר */
+    height: auto;
+  }
   
   .special-row {
     display: flex;
-    flex-direction: column ;
-    align-items: flex-start ;
-    gap:1px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
   }
 
   .connection-icons {
-    width: 100% ;
-    display: flex ;
+    width: 100%;
+    display: flex;
     justify-content: flex-end;
     gap: 15px;
     margin-top: 0px;
