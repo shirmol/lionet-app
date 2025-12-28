@@ -4,7 +4,8 @@
   direction: rtl;
   height: auto;
   min-height: 100dvh;
-  width: 100vw;
+  /* שיניתי מ-100vw ל-100% כדי למנוע התנגשות עם פס הגלילה במחשב */
+  width: 100%; 
   box-sizing: border-box;
   background-color: #0f1115;
   color: white;
@@ -13,7 +14,7 @@
   align-items: center;
   justify-content: flex-start;
   padding-top: 23px;
-  padding-bottom: 80px; /* מקום לחצים למטה */
+  padding-bottom: 80px;
   position: relative;
   font-family: sans-serif;
   overflow-x: hidden;
@@ -87,61 +88,13 @@
 }
 
 @keyframes pulse-glow {
-  0% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 0, 127, 0);
-  }
-  100% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 0, 127, 0);
-  }
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 0, 127, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
 }
 
 .app-hotspot:hover {
   background-color: rgba(255, 0, 127, 0.2);
-}
-
-/* חצים – בסיס (דסקטופ + מובייל) */
-.nav-arrow {
-  position: fixed;
-  bottom: 40px; 
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 99999; /* וידוא שהם מעל הכל */
-  padding: 0;
-}
-
-.nav-arrow img {
-  width: 60px;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  transition: transform 0.2s;
-  display: block;
-}
-
-.back-arrow {
-  /* שיניתי מ-15 ל-40 כדי שהחץ יזוז שמאלה ולא יסתתר מתחת לפס הגלילה */
-  right: 40px; 
-}
-
-.back-arrow img {
-  transform: rotate(180deg);
-}
-
-.back-arrow:hover img {
-  transform: rotate(180deg) scale(1.1);
-}
-
-.next-arrow {
-  left: 40px; 
-}
-
-.next-arrow:hover img {
-  transform: scale(1.1);
 }
 
 .timer-overlay {
@@ -166,7 +119,46 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* ----------- מובייל כללי ----------- */
+/* ============================================================
+   חלק קריטי: הגדרת החצים מחוץ ל-MEDIA QUERY
+   כדי שיופיעו גם במחשב!
+   ============================================================ */
+.nav-arrow {
+  position: fixed !important;
+  bottom: 40px !important;
+  z-index: 2147483647 !important; /* הכי גבוה שאפשר */
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  display: block !important; /* מכריח הופעה */
+}
+
+.nav-arrow img {
+  width: 60px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
+  transition: transform 0.2s;
+  display: block;
+}
+
+.back-arrow {
+  /* במחשב: מרחיק מהקצה כדי שפס הגלילה לא יסתיר */
+  right: 40px !important; 
+}
+
+.back-arrow img { transform: rotate(180deg); }
+.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
+
+.next-arrow {
+  left: 40px !important; 
+}
+
+.next-arrow:hover img { transform: scale(1.1); }
+
+
+/* ============================================================
+   התאמות למובייל (טאבלטים וטלפונים)
+   ============================================================ */
 @media only screen and (max-width: 768px) {
   .vpn-practice-page {
     background-color: #000000;
@@ -230,86 +222,35 @@
     left: 52%;
   }
 
-  .nav-arrow img {
-    width: 40px; /* חצים קטנים יותר במובייל */
-  }
-
-  .back-arrow {
-    right: 20px;
-  }
-
-  .next-arrow {
-    left: 20px;
-  }
+  /* הקטנת חצים במובייל */
+  .nav-arrow img { width: 45px; } 
+  .back-arrow { right: 20px !important; }
+  .next-arrow { left: 20px !important; }
 }
 
-/* ----------- מסכים ממש קטנים (טלפון קטן) ----------- */
+/* ============================================================
+   התאמות למסכים קטנים מאוד
+   ============================================================ */
 @media only screen and (max-width: 410px) {
-  .practice-title {
-    font-size: 1.6rem;
-  }
+  .practice-title { font-size: 1.6rem; }
+  .practice-instruction { font-size: 1.05rem; }
 
-  .practice-instruction {
-    font-size: 1.05rem;
-  }
-
-  .phone-interactive-container {
-    width: 300px;
-  }
-
-  .phone-img {
-    width: 300px;
-    max-height: 62vh;
-  }
+  .phone-interactive-container { width: 300px; }
+  .phone-img { width: 300px; max-height: 62vh; }
 
   .vpn-icon-pos {
     bottom: 16%;
     right: 6.7%;
     width: 49px;
     height: 41px;
-    border-radius: 57%;
   }
 
   .connect-btn-pos {
     top: 44.1%;
     left: 9.6%;
-    transform: translateX(-50%);
     width: 248px;
     height: 45px;
-    border-radius: 8px;
   }
 
-  .timer-overlay {
-    top: 41%;
-    left: 52%;
-  }
-
-  .nav-arrow img {
-    width: 34px;
-  }
-  .vpn-practice-page .nav-arrow {
-  position: fixed !important;
-  bottom: 40px !important;      /* קצת מעל הקצה – רואים גם במחשב */
-  z-index: 999999 !important;   /* מעל כל דבר אחר */
-  display: block !important;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.vpn-practice-page .nav-arrow img {
-  width: 40px !important;       /* גודל טוב גם למובייל וגם לדסקטופ */
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  transition: transform 0.2s;
-  display: block;
-}
-
-.vpn-practice-page .back-arrow {
-  right: 20px !important;
-}
-
-.vpn-practice-page .next-arrow {
-  left: 20px !important;
-}
+  .nav-arrow img { width: 34px; }
 }
