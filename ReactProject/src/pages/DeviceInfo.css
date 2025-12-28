@@ -218,7 +218,7 @@
   .next-arrow img {
     width: 54px;
   }
-  @media (max-width: 390px) {
+  @media (max-width: 400px) {
 
   .device-image img {
     max-height: 18vh;
