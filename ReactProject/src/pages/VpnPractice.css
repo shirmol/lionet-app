@@ -108,7 +108,7 @@
 /* חצים – בסיס (דסקטופ + מובייל) */
 .nav-arrow {
   position: fixed;
-  bottom: calc(18px + env(safe-area-inset-bottom)); /* תמיד מעל הפס של Safari */
+  bottom: 15px;
   background: none;
   border: none;
   cursor: pointer;
@@ -230,6 +230,7 @@
   }
 
   .nav-arrow img {
+    bottom: calc(18px + env(safe-area-inset-bottom)); /* תמיד מעל הפס של Safari */
     width: 40px; /* חצים קטנים יותר במובייל */
   }
 
