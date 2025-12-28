@@ -261,7 +261,7 @@
     max-height: 62vh;
   }
 .vpn-icon-pos {
-    bottom: 10%;
+    bottom: 13%;
     right: 6.7%;
     width: 49px;
     height: 41px;
@@ -269,7 +269,7 @@
   }
     .connect-btn-pos {
     top: 44.1%;
-    left: 10.7%;
+    left: 10.2%;
     transform: translateX(-50%);
     width: 248px;
     height: 45px;
