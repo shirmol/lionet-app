@@ -125,7 +125,7 @@
    ============================================================ */
 .nav-arrow {
   position: fixed !important;
-  bottom: 40px !important;
+  bottom: 20px !important;
   z-index: 2147483647 !important; /* הכי גבוה שאפשר */
   background: none !important;
   border: none !important;
@@ -143,14 +143,14 @@
 
 .back-arrow {
   /* במחשב: מרחיק מהקצה כדי שפס הגלילה לא יסתיר */
-  right: 40px !important; 
+  right: 20px !important; 
 }
 
 .back-arrow img { transform: rotate(180deg); }
 .back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
 
 .next-arrow {
-  left: 40px !important; 
+  left: 20px !important; 
 }
 
 .next-arrow:hover img { transform: scale(1.1); }
