@@ -108,11 +108,11 @@
 /* חצים – בסיס (דסקטופ + מובייל) */
 .nav-arrow {
   position: fixed;
-  bottom: 40px; /* שיהיה נראה גם בדסקטופ */
+  bottom: 40px; 
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 99999; /* וידוא שהם מעל הכל */
   padding: 0;
 }
 
@@ -124,7 +124,8 @@
 }
 
 .back-arrow {
-  right: 15px;
+  /* שיניתי מ-15 ל-40 כדי שהחץ יזוז שמאלה ולא יסתתר מתחת לפס הגלילה */
+  right: 40px; 
 }
 
 .back-arrow img {
@@ -136,7 +137,7 @@
 }
 
 .next-arrow {
-  left: 15px;
+  left: 40px; 
 }
 
 .next-arrow:hover img {
@@ -243,7 +244,7 @@
 }
 
 /* ----------- מסכים ממש קטנים (טלפון קטן) ----------- */
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 410px) {
   .practice-title {
     font-size: 1.6rem;
   }
