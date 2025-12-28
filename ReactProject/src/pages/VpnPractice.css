@@ -70,7 +70,7 @@
 }
 
 .vpn-icon-pos {
-  bottom: 22.2%;
+  bottom: 16.5%;
   right: 6.6%;
   width: 49px;
   height: 41px;
@@ -202,7 +202,7 @@
 
   .phone-img {
     height: auto;
-    max-height: 60vh;
+    max-height: 65vh;
     width: 318px;
     object-fit: fill;
   }
@@ -258,7 +258,7 @@
 
   .phone-img {
     width: 300px;
-    max-height: 52vh;
+    max-height: 65vh;
   }
 
   .nav-arrow img {
