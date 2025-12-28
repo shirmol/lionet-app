@@ -108,7 +108,7 @@
 /* חצים – בסיס (דסקטופ + מובייל) */
 .nav-arrow {
   position: fixed;
-  bottom: 15px;
+  bottom: 40px; /* שיהיה נראה גם בדסקטופ */
   background: none;
   border: none;
   cursor: pointer;
@@ -209,7 +209,7 @@
 
   .vpn-icon-pos {
     bottom: 16.9%;
-    right: 6.7%;
+    right: 6.9%;
     width: 49px;
     height: 41px;
     border-radius: 57%;
@@ -230,7 +230,6 @@
   }
 
   .nav-arrow img {
-    bottom: calc(18px + env(safe-area-inset-bottom)); /* תמיד מעל הפס של Safari */
     width: 40px; /* חצים קטנים יותר במובייל */
   }
 
@@ -244,7 +243,7 @@
 }
 
 /* ----------- מסכים ממש קטנים (טלפון קטן) ----------- */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 460px) {
   .practice-title {
     font-size: 1.6rem;
   }
@@ -261,14 +260,16 @@
     width: 300px;
     max-height: 62vh;
   }
-.vpn-icon-pos {
+
+  .vpn-icon-pos {
     bottom: 16%;
-    right: 6.5.7%;
+    right: 6.7%;
     width: 49px;
     height: 41px;
     border-radius: 57%;
   }
-    .connect-btn-pos {
+
+  .connect-btn-pos {
     top: 44.1%;
     left: 9.6%;
     transform: translateX(-50%);
@@ -281,26 +282,8 @@
     top: 41%;
     left: 52%;
   }
+
   .nav-arrow img {
     width: 34px;
   }
-/* ----------- דסקטופ – להרים את החצים מעל שורת המשימות ----------- */
-@media only screen and (min-width: 769px) {
-  .nav-arrow {
-    bottom: 80px;   /* מרים את החצים למעלה במסך גדול */
-  }
-
-  .nav-arrow img {
-    width: 60px;    /* גודל נוח לדסקטופ */
-  }
-
-  .back-arrow {
-    right: 24px;
-  }
-
-  .next-arrow {
-    left: 24px;
-  }
-}
-
 }
