@@ -1,15 +1,16 @@
-/* =========================================
-   חלק 1: הגדרות מחשב (Desktop) - המקוריות
-   ========================================= */
+/* ============================================================
+   חלק 1: הגדרות בסיס - למחשב (Desktop)
+   כאן אנחנו מגדירים את התצוגה הרגילה: תמונה ליד טקסט
+   ============================================================ */
 
 .page-device {
   background-color: #0e1113;
   height: 100vh;
   width: 100vw;
-  display: flex;
+  display: flex;       /* מרכז את התוכן באמצע המסך */
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden;    /* במחשב אין גלילה, הכל נכנס במסך אחד */
   font-family: "Segoe UI", sans-serif;
   color: white;
   direction: rtl;
@@ -17,7 +18,7 @@
 
 .device-layout {
   display: flex;
-  flex-direction: row; /* תמונה ליד טקסט */
+  flex-direction: row; /* חשוב מאוד: שורה! תמונה ליד טקסט */
   align-items: center;
   justify-content: center;
   width: 90%;
@@ -26,6 +27,7 @@
   height: 90%;
 }
 
+/* --- הגדרות צד ימין: תמונה --- */
 .device-image {
   flex: 1;
   display: flex;
@@ -39,9 +41,10 @@
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.2));
-  animation: floatPhone 3s ease-in-out infinite;
+  animation: floatPhone 3s ease-in-out infinite; /* אנימציית ריחוף רק במחשב */
 }
 
+/* --- הגדרות צד שמאל: טקסט --- */
 .device-info {
   flex: 1;
   display: flex;
@@ -58,8 +61,10 @@
   font-size: 32px;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  margin-top: 0;
 }
 
+/* עיצוב התיבות */
 .info-row {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -81,6 +86,7 @@
   display: block;
 }
 
+/* שורת האייקונים */
 .special-row {
   display: flex;
   flex-direction: column;
@@ -106,6 +112,7 @@
   margin-bottom: 5px;
 }
 
+/* חץ במחשב */
 .next-arrow {
   position: absolute;
   bottom: 30px;
@@ -131,35 +138,39 @@
 }
 
 
-/* =========================================
-   חלק 2: הגדרות מובייל (Mobile) - דורס את המחשב
-   ========================================= */
+/* ============================================================
+   חלק 2: התאמות לנייד (Mobile)
+   הקוד הזה "דורס" את הקוד שלמעלה רק כשרוחב המסך קטן מ-900
+   ============================================================ */
 
 @media (max-width: 900px) {
 
   .page-device {
     background-color: #000000;
-    height: auto;
+    height: auto;           /* גובה משתנה לפי התוכן */
     min-height: 100vh;
-    display: block; /* מבטל את המרכוז של המחשב ומאפשר גלילה */
-    overflow-y: auto;
+    display: block;         /* מבטל את המרכוז של הפלקס כדי לאפשר גלילה */
+    overflow-y: auto;       /* מאפשר גלילה */
   }
 
   .device-layout {
-    flex-direction: column; /* אחד מתחת לשני */
+    display: flex;
+    flex-direction: column; /* משנה לשורה: אחד מתחת לשני */
     width: 100%;
     height: auto;
-    /* רווח גדול למטה כדי שהחץ לא יסתיר את הטקסט האחרון */
-    padding: 20px 15px 200px 15px;
+    
+    /* התיקון החשוב: רווח גדול למטה כדי שהחץ לא יסתיר כלום */
+    padding: 20px 15px 200px 15px; 
+    
     gap: 20px;
     margin: 0;
   }
 
   .device-image {
     width: 100%;
-    order: -1; /* שם את התמונה למעלה */
+    order: -1;          /* מעביר את התמונה לראש העמוד */
     margin-bottom: 10px;
-    animation: none; /* מבטל את הריחוף בטלפון */
+    animation: none;    /* מבטל אנימציית ריחוף בנייד */
   }
 
   .device-image img {
@@ -171,7 +182,7 @@
   .device-info {
     width: 100%;
     padding: 0;
-    max-height: none;
+    max-height: none;   /* מבטל הגבלת גובה לטקסט */
     overflow: visible;
   }
 
@@ -179,9 +190,14 @@
     text-align: center;
     font-size: 24px;
   }
+  
+  .connection-icons {
+      justify-content: flex-end; /* מיישר אייקונים לשמאל כמו שרצית */
+  }
 
+  /* מיקום החץ בנייד */
   .next-arrow {
-    position: fixed;
+    position: fixed;    /* מקבע את החץ למסך */
     bottom: 30px;
     left: 20px;
     z-index: 99999;
