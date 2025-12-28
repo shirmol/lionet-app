@@ -94,6 +94,7 @@ html, body {
   object-fit: cover;
 }
 
+/* --- לא נגעתי בחצים לפי בקשתך --- */
 .nav-arrow {
   position: absolute;
   bottom: 20px;
@@ -117,9 +118,13 @@ html, body {
 .back-arrow img { transform: rotate(180deg); }
 .back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
 
+/* --- מובייל --- */
 @media (max-width: 768px) {
   
   .sync-page {
+      /* כאן השינוי: רקע שחור במובייל */
+      background-color: #000000 !important; 
+      
       padding-top: 0vh;   
       gap: -3rem; 
   }

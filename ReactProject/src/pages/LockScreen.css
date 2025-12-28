@@ -10,6 +10,7 @@
   font-family: "Segoe UI", sans-serif;
   color: #fff;
   direction: rtl;
+  position: relative;
 }
 
 .lock-container {
@@ -96,38 +97,50 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-.next-arrow {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
+/* ============================================================
+   חצים - מיושר לפי הסטנדרט (קבוע למחשב: 15px)
+   ============================================================ */
+
+.nav-arrow {
+  position: absolute;
+  bottom: 15px;      /* גובה סטנדרטי למחשב */
   background: none;
   border: none;
   cursor: pointer;
   z-index: 100;
+  padding: 0;
+  touch-action: manipulation;
 }
 
-.next-arrow img {
+.nav-arrow img {
   width: 60px;
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
   transition: transform 0.2s;
+  display: block;
 }
 
+/* מיקומים ספציפיים */
+.next-arrow {
+  left: 15px;
+}
 .next-arrow:hover img {
   transform: scale(1.1);
 }
 
 .back-arrow {
-  right: 20px; 
+  right: 15px;
 }
-
 .back-arrow img {
   transform: rotate(180deg);
 }
-
 .back-arrow:hover img {
   transform: rotate(180deg) scale(1.1);
 }
 
+
+/* ============================================================
+   מובייל (עד 900px)
+   ============================================================ */
 @media (max-width: 900px) {
   .page-lock {
     background-color: #000000 !important;
@@ -170,14 +183,25 @@
     font-size: 24px;
   }
 
+  /* --- חצים במובייל --- */
+  /* גובה 20px, רוחב 40px */
+  .nav-arrow {
+    bottom: 20px;
+  }
+
   .nav-arrow img {
     width: 40px;
   }
 
-  .next-arrow,
-  .back-arrow {
-    bottom: 14px;
-  }
+  .next-arrow { left: 20px; }
+  .back-arrow { right: 20px; }
+
+} /* כאן היה חסר הסוגר שגרם לבלגן! */
+
+
+/* ============================================================
+   מובייל קטן (עד 400px)
+   ============================================================ */
 @media (max-width: 400px) {
 
   .lock-container {
@@ -220,9 +244,8 @@
     width: 30px;
   }
 
-  .next-arrow,
-  .back-arrow {
-    bottom: 16px;
+  /* --- חצים במסך קטן: עולים ל-40px --- */
+  .nav-arrow {
+    bottom: 40px;
   }
-}
 }
