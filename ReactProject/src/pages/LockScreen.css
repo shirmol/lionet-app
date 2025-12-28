@@ -96,22 +96,22 @@
   animation: pulseBlue 2s infinite ease-in-out;
 }
 
-.nav-arrow {
-  position: fixed; 
-  bottom: 15px;    
+.next-arrow {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 100;
-  padding: 0;      
 }
 
-.nav-arrow img {
-  width: 60px; 
+.next-arrow img {
+  width: 60px;
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
   transition: transform 0.2s;
-  display: block;
 }
+
 
 .next-arrow {
   left: 15px; 
