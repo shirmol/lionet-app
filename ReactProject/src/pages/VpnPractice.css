@@ -208,7 +208,7 @@
   }
 
   .vpn-icon-pos {
-    bottom: 19%;
+    bottom: 17%;
     right: 6.7%;
     width: 49px;
     height: 41px;
@@ -216,7 +216,7 @@
   }
 
   .connect-btn-pos {
-    top: 40%;
+    top: 45%;
     left: 11.4%;
     transform: translateX(-50%);
     width: 248px;
@@ -225,7 +225,7 @@
   }
 
   .timer-overlay {
-    top: 36%;
+    top: 40%;
     left: 52%;
   }
 
@@ -261,14 +261,14 @@
     max-height: 62vh;
   }
 .vpn-icon-pos {
-    bottom: 10%;
+    bottom: -1%;
     right: 6.7%;
     width: 49px;
     height: 41px;
     border-radius: 57%;
   }
     .connect-btn-pos {
-    top: 40%;
+    top: 44%;
     left: 11.4%;
     transform: translateX(-50%);
     width: 248px;
@@ -277,7 +277,7 @@
   }
 
   .timer-overlay {
-    top: 36%;
+    top: 39%;
     left: 52%;
   }
   .nav-arrow img {
