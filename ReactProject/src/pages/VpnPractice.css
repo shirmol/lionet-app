@@ -269,7 +269,7 @@
   }
     .connect-btn-pos {
     top: 44.1%;
-    left: 11.2%;
+    left: 10.9%;
     transform: translateX(-50%);
     width: 248px;
     height: 45px;
@@ -283,12 +283,6 @@
   .nav-arrow img {
     width: 34px;
   }
-    .vpn-icon-pos {
-    bottom: 32%;
-    right: 6.7%;
-    width: 49px;
-    height: 41px;
-    border-radius: 57%;
-  }
+
 
 }
