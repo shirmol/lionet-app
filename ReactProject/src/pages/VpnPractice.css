@@ -287,4 +287,29 @@
   .nav-arrow img {
     width: 34px;
   }
+  .vpn-practice-page .nav-arrow {
+  position: fixed !important;
+  bottom: 40px !important;      /* קצת מעל הקצה – רואים גם במחשב */
+  z-index: 999999 !important;   /* מעל כל דבר אחר */
+  display: block !important;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.vpn-practice-page .nav-arrow img {
+  width: 40px !important;       /* גודל טוב גם למובייל וגם לדסקטופ */
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  transition: transform 0.2s;
+  display: block;
+}
+
+.vpn-practice-page .back-arrow {
+  right: 20px !important;
+}
+
+.vpn-practice-page .next-arrow {
+  left: 20px !important;
+}
 }
