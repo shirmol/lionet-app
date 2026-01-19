@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SyncPractice.css'; 
 import arrowIcon from '../assets/arrow-next.png';
 import homeScreenImg from '../assets/lionet-phone2.jpg'; 
-import hubInnerImg from '../assets/hub1.jpg'; 
+import hubInnerImg from '../assets/Hub1.jpg'; 
 import hubProfileImg from '../assets/Hub2.jpg'; 
 
 export default function SyncPractice({ onNext, onBack }) {
