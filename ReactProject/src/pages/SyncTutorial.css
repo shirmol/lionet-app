@@ -14,18 +14,18 @@ html, body {
   height: 100dvh;
   width: 100vw;
   box-sizing: border-box;
-  background-color: #0f1115;
+  background: radial-gradient(circle at center, #1b1f22, #000000);
   color: white;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center; 
+  gap: 40px;
   text-align: center;
   padding: 0; 
   padding-bottom: 60px;
   position: relative;
-  font-family: sans-serif;
+  font-family: "Segoe UI", sans-serif;
   overflow: hidden;
 }
 
@@ -33,59 +33,75 @@ html, body {
   z-index: 10;
   max-width: 700px;
   padding: 0 20px; 
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .sync-title {
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: 800;
   color: #22d3ee;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
   margin-top: 0;
   line-height: 1.1;
-}
-
-.sync-divider {
-  width: 80px;
-  height: 4px;
-  background-color: #374151;
-  margin: 1.5rem auto;
-  border-radius: 2px;
+  letter-spacing: 1px;
 }
 
 .sync-subtitle {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #e5e7eb;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .sync-description {
-  font-size: 1.3rem;
-  color: #9ca3af;
+  font-size: 1.2rem;
+  color: #a0a0a0;
   line-height: 1.5;
 }
 
 .sync-video-container {
   position: relative;
   width: 100%;
-  max-width: 700px; 
+  max-width: 800px; 
   flex-shrink: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0; 
+  padding: 0 20px;
+  animation: scaleIn 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.15; transform: scale(0.98); }
+  50% { opacity: 0.25; transform: scale(1.02); }
+  100% { opacity: 0.15; transform: scale(0.98); }
+}
+
+.video-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, #22d3ee 0%, transparent 60%);
+  filter: blur(50px);
+  z-index: -1;
+  animation: glowPulse 6s infinite ease-in-out;
 }
 
 .sync-video-wrapper {
   width: 100%;
   aspect-ratio: 16 / 9; 
-  background-color: black;
-  border-radius: 16px; 
-  border: 1px solid #1f2937;
-  box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+  background-color: #000;
+  border-radius: 20px; 
+  border: 2px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
   overflow: hidden;
   position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sync-video-wrapper:hover {
+  border-color: rgba(34, 211, 238, 0.8);
+  transform: scale(1.01);
 }
 
 .phone-video {
@@ -94,46 +110,41 @@ html, body {
   object-fit: cover;
 }
 
-/* --- לא נגעתי בחצים לפי בקשתך --- */
-.nav-arrow {
-  position: absolute;
-  bottom: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  padding: 0;
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.nav-arrow img {
-  width: 60px;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  transition: transform 0.2s;
-  display: block;
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-.next-arrow { left: 20px; }
-.next-arrow:hover img { transform: scale(1.1); }
-.back-arrow { right: 20px; }
-.back-arrow img { transform: rotate(180deg); }
-.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
-
-/* --- מובייל --- */
 @media (max-width: 768px) {
   
   .sync-page {
-      /* כאן השינוי: רקע שחור במובייל */
-      background-color: #000000 !important; 
-      
-      padding-top: 0vh;   
-      gap: -3rem; 
+      background: #000000; 
+      padding: 20px 0 80px;  
+      gap: 30px; 
+      justify-content: flex-start;
+      overflow-y: auto;
+  }
+  
+  .sync-text-section {
+    margin-top: 40px;
   }
 
   .sync-video-container {
     width: 95%; 
     max-width: 95%; 
+    padding: 0;
   }
+  
+  .sync-video-wrapper {
+    border-radius: 12px;
+  }
+
   .sync-title { font-size: 2.2rem; }
-  .sync-subtitle { font-size: 1.4rem; }
+  .sync-subtitle { font-size: 1.3rem; }
   .sync-description { font-size: 1rem; }
 }

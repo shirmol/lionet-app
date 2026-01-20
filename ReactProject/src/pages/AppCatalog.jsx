@@ -18,6 +18,7 @@ export default function AppCatalog({ onNext, onBack }) {
       </div>
 
       <div className="catalog-video-container">
+        <div className="video-glow"></div>
         <div className="catalog-video-wrapper">
           <video 
             className="catalog-video" 
@@ -32,13 +33,12 @@ export default function AppCatalog({ onNext, onBack }) {
           </video>
         </div>
       </div>
-      
-      <button className="nav-arrow back-arrow" onClick={onBack}>
+      <button className="prev-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
 
       {isVideoEnded && (
-        <button className="nav-arrow next-arrow" onClick={onNext}>
+        <button className="next-arrow" onClick={onNext}>
           <img src={arrowIcon} alt="הבא" />
         </button>
       )}

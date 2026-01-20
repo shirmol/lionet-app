@@ -8,14 +8,32 @@ import hubProfileImg from '../assets/Hub2.jpg';
 export default function SyncPractice({ onNext, onBack }) {
   const [internalStep, setInternalStep] = useState(1);
   const [showModal, setShowModal] = useState(false); 
+  const [showError, setShowError] = useState(false);
 
-  const handleHubClick = () => setInternalStep(2);
+  const handleHubClick = (e) => {
+    e.stopPropagation(); 
+    setShowError(false);
+    setInternalStep(2);
+  };
 
-  const handleDeviceClick = () => setInternalStep(3);
+  const handleDeviceClick = (e) => {
+    e.stopPropagation(); 
+    setShowError(false);
+    setInternalStep(3);
+  };
 
-  const handleSyncClick = () => {
+  const handleSyncClick = (e) => {
+    e.stopPropagation(); 
+    setShowError(false);
     setInternalStep(4);
     setShowModal(true); 
+  };
+
+  const handleWrongClick = () => {
+    if (!showModal && internalStep < 4) {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 1500);
+    }
   };
 
   const handleCloseModal = () => {
@@ -24,6 +42,7 @@ export default function SyncPractice({ onNext, onBack }) {
 
   const handleBackClick = () => {
     if (showModal) return; 
+    setShowError(false);
     
     if (internalStep === 4) setInternalStep(3);
     else if (internalStep === 3) setInternalStep(2);
@@ -85,7 +104,7 @@ export default function SyncPractice({ onNext, onBack }) {
         )}
       </div>
 
-      <div className="sync-phone-container">
+      <div className="sync-phone-container" onClick={handleWrongClick}>
         
         <img 
           src={getCurrentImage()} 
@@ -93,6 +112,12 @@ export default function SyncPractice({ onNext, onBack }) {
           className="sync-phone-img" 
         />
         
+        {showError && !showModal && (
+            <div className="error-bubble">
+                זה לא הכפתור, נסה שוב
+            </div>
+        )}
+
         {!showModal && internalStep === 1 && (
           <button className="blue-hotspot hub-icon-pos" onClick={handleHubClick}></button>
         )}
@@ -106,7 +131,7 @@ export default function SyncPractice({ onNext, onBack }) {
       </div>
 
       <button 
-        className={`sync-nav-arrow back-arrow ${showModal ? 'disabled' : ''}`} 
+        className={`prev-arrow ${showModal ? 'disabled' : ''}`} 
         onClick={handleBackClick}
       >
         <img src={arrowIcon} alt="חזור" />
@@ -114,7 +139,7 @@ export default function SyncPractice({ onNext, onBack }) {
 
       {internalStep === 4 && (
         <button 
-          className={`sync-nav-arrow next-arrow ${showModal ? 'disabled' : ''}`} 
+          className={`next-arrow ${showModal ? 'disabled' : ''}`} 
           onClick={handleNextClick}
         >
           <img src={arrowIcon} alt="הבא" />

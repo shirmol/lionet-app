@@ -8,10 +8,21 @@ export default function AppCatalogPractice({ onNext, onBack }) {
   const [internalStep, setInternalStep] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
   const [quizStatus, setQuizStatus] = useState("idle"); 
+  const [showError, setShowError] = useState(false); 
+
   const CORRECT_ANSWER = "6.10.3";
 
-  const handleAppClick = () => {
+  const handleAppClick = (e) => {
+    e.stopPropagation(); 
+    setShowError(false);
     setInternalStep(2);
+  };
+
+  const handleWrongClick = () => {
+    if (internalStep === 1) {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 1500);
+    }
   };
 
   const handleCheckAnswer = () => {
@@ -27,6 +38,7 @@ export default function AppCatalogPractice({ onNext, onBack }) {
       setInternalStep(1);
       setQuizStatus("idle");
       setSelectedOption(null);
+      setShowError(false);
     } 
     else {
       onBack();
@@ -38,69 +50,83 @@ export default function AppCatalogPractice({ onNext, onBack }) {
   };
 
   return (
-    <div className="acp-container">
+    <div className="catalog-practice-page">
       {internalStep === 1 && (
         <>
-          <div className="acp-text-area">
-             <h1 className="acp-main-title">עכשיו תורכם לתרגל</h1>
-             <h2 className="acp-sub-text">להיכנס ל APP CATALOG</h2>
+          <div className="practice-header">
+             <h1 className="practice-title">עכשיו תורכם לתרגל</h1>
+             <h2 className="practice-instruction">להיכנס ל APP CATALOG</h2>
           </div>
 
-          <div className="acp-device-wrapper">
-            <img src={step1Img} alt="Home Screen" className="acp-device-image" />
-            <button className="acp-click-zone acp-pos-step1" onClick={handleAppClick}></button>
+          <div className="step1-phone-container" onClick={handleWrongClick}>
+            <img src={step1Img} alt="Home Screen" className="step1-phone-img" />
+            
+            {showError && (
+                <div className="error-bubble">
+                    זה לא הכפתור, נסה שוב
+                </div>
+            )}
+
+            <button className="app-hotspot catalog-icon-pos" onClick={handleAppClick}></button>
           </div>
         </>
       )}
 
-      
       {internalStep === 2 && (
-        <div className="acp-split-layout">
-           <div className="acp-quiz-section">
-              <h1 className="acp-quiz-title">הגעתם לעמוד האפליקציות וגרסותיהם</h1>
-              <p className="acp-quiz-subtitle">הביטו במסך הטלפון שמשמאל</p>
-              <div className="acp-question"> מהי הגרסה של אפליקציית blue wolf? </div>
-              {["6.10.3", "3.10.0", "4.41.2.1", "1.4.0"].map((option) => (
-                  <label 
-                    key={option} 
-                    className={`acp-option-label ${selectedOption === option ? 'selected' : ''}`}
-                  >
-                    <input 
-                        type="radio" 
-                        name="version" 
-                        className="acp-radio-input"
-                        value={option}
-                        onChange={() => {
-                            setSelectedOption(option);
-                            setQuizStatus("idle"); 
-                        }}
-                    />
-                    <span style={{ marginRight: '10px' }}>{option}</span>
-                  </label>
-              ))}
+        <div className="split-layout">
+           <div className="quiz-half">
+              <div className="quiz-content">
+                  <h1 className="quiz-title">בדיקת גרסה</h1>
+                  <p className="quiz-subtitle">הביטו במסך וזהו את גרסת Blue Wolf</p>
+                  
+                  <div className="quiz-options">
+                    {["6.10.3", "3.10.0", "4.41.2.1", "1.4.0"].map((option) => (
+                        <label 
+                          key={option} 
+                          className={`option-label ${selectedOption === option ? 'selected' : ''}`}
+                        >
+                          <input 
+                              type="radio" 
+                              name="version" 
+                              className="radio-input"
+                              value={option}
+                              onChange={() => {
+                                  setSelectedOption(option);
+                                  setQuizStatus("idle"); 
+                              }}
+                          />
+                          <span style={{ marginRight: '15px' }}>{option}</span>
+                        </label>
+                    ))}
+                  </div>
 
-              <button className="acp-check-btn" onClick={handleCheckAnswer}>
-                  בדקו
-              </button>
-              {quizStatus === "error" && (
-                  <div className="acp-feedback feedback-error">לא נכון, נסו שנית</div>
-              )}
-              
-              {quizStatus === "success" && (
-                  <div className="acp-feedback feedback-success">כל הכבוד! ✔</div>
-              )}
+                  <button className="check-btn" onClick={handleCheckAnswer}>
+                      בדיקה
+                  </button>
+                  
+                  {quizStatus === "error" && (
+                      <div className="feedback-msg feedback-error">לא נכון, נסו שנית</div>
+                  )}
+                  
+                  {quizStatus === "success" && (
+                      <div className="feedback-msg feedback-success">כל הכבוד! ✔</div>
+                  )}
+              </div>
            </div>
-           <div className="acp-device-wrapper">
-              <img src={step2Img} alt="Apps List" className="acp-device-image" />
+
+           <div className="phone-half">
+              <img src={step2Img} alt="Apps List" className="step2-phone-img" />
            </div>
 
         </div>
       )}
-      <button className="acp-arrow-btn acp-arrow-back" onClick={handleBackClick}>
+
+      <button className="prev-arrow" onClick={handleBackClick}>
         <img src={arrowIcon} alt="חזור" />
       </button>
+
       {internalStep === 2 && quizStatus === "success" && (
-        <button className="acp-arrow-btn acp-arrow-next" onClick={handleNextClick}>
+        <button className="next-arrow" onClick={handleNextClick}>
           <img src={arrowIcon} alt="הבא" />
         </button>
       )}

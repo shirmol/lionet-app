@@ -1,4 +1,4 @@
-
+/* DeviceInfo.css */
 * {
   box-sizing: border-box; 
 }
@@ -99,26 +99,6 @@
   height: 55px;
 }
 
-.next-arrow {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-}
-
-.next-arrow img {
-  width: 60px;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  transition: transform 0.2s;
-}
-
-.next-arrow:hover img {
-  transform: scale(1.1);
-}
-
 .fade-item {
   opacity: 0;
   transform: translateY(15px);
@@ -134,7 +114,6 @@
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
-
 
 @media (max-width: 900px) {
 
@@ -208,33 +187,18 @@
     height: 33px;
   }
 
-  .next-arrow {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
-  }
-
-  .next-arrow img {
-    width: 40px;
-  }
   @media (max-width: 400px) {
+    .device-image img {
+      max-height: 18vh;
+    }
 
-  .device-image img {
-    max-height: 18vh;
-  }
+    .page-title {
+      margin-top: 6px;
+      font-size: 18px;
+    }
 
-  .page-title {
-    margin-top: 6px;
-    font-size: 18px;
+    .info-row {
+      font-size: 12.5px;
+    }
   }
-
-  .info-row {
-    font-size: 12.5px;
-  }
-
-  .next-arrow {
-    bottom: 40px;
-  }
-}
 }

@@ -31,7 +31,7 @@ function App() {
           <div className="card">
             <img src={lionetPhone} alt="מכשיר LioNet" className="card-image"/>
             <h1 className="card-title"> לומדת מפעיל LIONET</h1>
-            <p className="card-subtitle">לומדה זו תכשיר אותך בהפעלת מכשיר ה lionet.</p>
+            <p className="card-subtitle">לומדה זו תכשיר אותך בהפעלת מכשיר ה LIONET.</p>
             <button className="card-button" onClick={() => setPage("device")}>התחל בהכשרה</button>
           </div>
         </div>

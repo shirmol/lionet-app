@@ -3,9 +3,8 @@
 .vpn-practice-page {
   direction: rtl;
   height: auto;
-  min-height: 100dvh;
-  /* שיניתי מ-100vw ל-100% כדי למנוע התנגשות עם פס הגלילה במחשב */
-  width: 100%; 
+  min-height: 100vh;
+  width: 100%;
   box-sizing: border-box;
   background-color: #0f1115;
   color: white;
@@ -14,11 +13,12 @@
   align-items: center;
   justify-content: flex-start;
   padding-top: 23px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   position: relative;
   font-family: sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .practice-header {
@@ -50,6 +50,9 @@
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  overflow: visible; 
 }
 
 .phone-img {
@@ -62,39 +65,67 @@
 
 .app-hotspot {
   position: absolute;
-  background-color: rgba(255, 0, 127, 0.1);
-  border: 2px solid #ff007f;
-  box-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+  background-color: transparent;
+  border: none; 
+  box-shadow: none; 
   cursor: pointer;
   z-index: 20;
-  animation: pulse-glow 2s infinite;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; 
+}
+
+.app-hotspot:hover,
+.app-hotspot:active,
+.app-hotspot:focus {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.error-bubble {
+  position: fixed; 
+  bottom: 85px; 
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #ff0055;
+  color: white;
+  padding: 10px 40px;
+  min-width: 200px;
+  border-radius: 50px;
+  text-align: center;
+  
+  font-weight: 600;
+  font-size: 1.2rem;
+  z-index: 99999; 
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  
+  animation: slideUpFade 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUpFade {
+  0% { transform: translate(-50%, 50px) scale(0.8); opacity: 0; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 
 .vpn-icon-pos {
-  bottom: 16.5%;
+  bottom: 15.5%;
   right: 6.6%;
-  width: 49px;
-  height: 41px;
-  border-radius: 57%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
 }
 
 .connect-btn-pos {
   top: 44.9%;
-  left: 11.7%;
+  left: 48.7%; 
   transform: translateX(-50%);
-  width: 248px;
-  height: 45px;
+  width: 260px;
+  height: 55px;
   border-radius: 8px;
-}
-
-@keyframes pulse-glow {
-  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 0, 127, 0); }
-  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
-}
-
-.app-hotspot:hover {
-  background-color: rgba(255, 0, 127, 0.2);
 }
 
 .timer-overlay {
@@ -119,71 +150,12 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* ============================================================
-   חלק קריטי: הגדרת החצים מחוץ ל-MEDIA QUERY
-   כדי שיופיעו גם במחשב!
-   ============================================================ */
-.nav-arrow {
-  position: fixed !important;
-  bottom: 20px !important;
-  z-index: 2147483647 !important; /* הכי גבוה שאפשר */
-  background: none !important;
-  border: none !important;
-  cursor: pointer;
-  padding: 0;
-  display: block !important; /* מכריח הופעה */
-}
-
-.nav-arrow img {
-  width: 60px;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
-  transition: transform 0.2s;
-  display: block;
-}
-
-.back-arrow {
-  /* במחשב: מרחיק מהקצה כדי שפס הגלילה לא יסתיר */
-  right: 20px !important; 
-}
-
-.back-arrow img { transform: rotate(180deg); }
-.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
-
-.next-arrow {
-  left: 20px !important; 
-}
-
-.next-arrow:hover img { transform: scale(1.1); }
-
-
-/* ============================================================
-   התאמות למובייל (טאבלטים וטלפונים)
-   ============================================================ */
 @media only screen and (max-width: 768px) {
   .vpn-practice-page {
     background-color: #000000;
     justify-content: flex-start;
     padding-top: 20px;
-    padding-bottom: 70px;
-  }
-
-  .practice-header {
-    text-align: center;
-    z-index: 10;
-    width: 100%;
-    flex-shrink: 0;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  .practice-title {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-
-  .practice-instruction {
-    font-size: 1.2rem;
+    padding-bottom: 100px; 
   }
 
   .phone-interactive-container {
@@ -191,6 +163,7 @@
     height: auto;
     aspect-ratio: auto;
     margin-top: 10px;
+    margin-bottom: 50px;
   }
 
   .phone-img {
@@ -200,57 +173,35 @@
     object-fit: fill;
   }
 
-  .vpn-icon-pos {
-    bottom: 16.9%;
-    right: 6.9%;
-    width: 49px;
-    height: 41px;
-    border-radius: 57%;
+  .error-bubble {
+    bottom: 80px; 
+    font-size: 1rem;
+    padding: 8px 30px;
   }
 
-  .connect-btn-pos {
-    top: 45.2%;
-    left: 11.4%;
-    transform: translateX(-50%);
-    width: 248px;
-    height: 45px;
-    border-radius: 8px;
+  .practice-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
   }
+  .practice-title { font-size: 1.8rem; line-height: 1.2; margin-bottom: 4px; }
+  .practice-instruction { font-size: 1.2rem; }
 
-  .timer-overlay {
-    top: 41%;
-    left: 52%;
-  }
-
-  /* הקטנת חצים במובייל */
-  .nav-arrow img { width: 45px; } 
-  .back-arrow { right: 20px !important; }
-  .next-arrow { left: 20px !important; }
+  .vpn-icon-pos { bottom: 16.9%; right: 6.9%; width: 55px; height: 55px; }
+  .connect-btn-pos { top: 45.2%; left: 11.4%; width: 250px; height: 50px; }
+  .timer-overlay { top: 41%; left: 52%; }
 }
 
-/* ============================================================
-   התאמות למסכים קטנים מאוד
-   ============================================================ */
 @media only screen and (max-width: 410px) {
   .practice-title { font-size: 1.6rem; }
   .practice-instruction { font-size: 1.05rem; }
-
   .phone-interactive-container { width: 300px; }
-  .phone-img { width: 300px; max-height: 62vh; }
-
-  .vpn-icon-pos {
-    bottom: 16%;
-    right: 6.7%;
-    width: 49px;
-    height: 41px;
+  .phone-img { width: 300px; max-height: 60vh; }
+  
+  .error-bubble {
+    bottom: 75px; 
   }
 
-  .connect-btn-pos {
-    top: 44.1%;
-    left: 9.6%;
-    width: 248px;
-    height: 45px;
-  }
-
-  .nav-arrow img { width: 34px; }
+  .vpn-icon-pos { bottom: 16%; right: 6.7%; width: 50px; height: 50px; }
+  .connect-btn-pos { top: 44.1%; left: 9.6%; width: 250px; height: 50px; }
 }

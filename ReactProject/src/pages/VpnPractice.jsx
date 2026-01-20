@@ -7,8 +7,9 @@ import connectedScreenImg from '../assets/vpn-timer.jpg';
 
 export default function VpnPractice({ onNext, onBack }) {
   const [internalStep, setInternalStep] = useState(1);
-  
+  const [showError, setShowError] = useState(false);
   const [seconds, setSeconds] = useState(0);
+
   useEffect(() => {
     let interval = null;
     if (internalStep === 3) {
@@ -18,25 +19,37 @@ export default function VpnPractice({ onNext, onBack }) {
     } else {
       setSeconds(0);
     }
-
     return () => clearInterval(interval);
+  }, [internalStep]);
+
+  useEffect(() => {
+    setShowError(false);
   }, [internalStep]);
 
   const formatTime = (totalSeconds) => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const secs = totalSeconds % 60;
-    
     const pad = (num) => num.toString().padStart(2, '0');
     return `${hours}:${pad(minutes)}:${pad(secs)}`;
   };
 
-  const handleHotspotClick = () => {
+  const handleHotspotClick = (e) => {
+    e.stopPropagation();
+    setShowError(false);
     if (internalStep === 1) setInternalStep(2);
     else if (internalStep === 2) setInternalStep(3);
   };
 
+  const handleWrongClick = () => {
+    if (internalStep < 3) {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 1500);
+    }
+  };
+
   const handleBackClick = () => {
+    setShowError(false);
     if (internalStep === 3) setInternalStep(2);
     else if (internalStep === 2) setInternalStep(1);
     else onBack();
@@ -65,7 +78,7 @@ export default function VpnPractice({ onNext, onBack }) {
         )}
       </div>
 
-      <div className="phone-interactive-container">
+      <div className="phone-interactive-container" onClick={handleWrongClick}>
         
         <img 
           src={
@@ -76,6 +89,12 @@ export default function VpnPractice({ onNext, onBack }) {
           alt="Phone Screen" 
           className="phone-img" 
         />
+        
+        {showError && internalStep < 3 && (
+            <div className="error-bubble">
+               זה לא הכפתור, נסה שוב
+            </div>
+        )}
         
         {internalStep < 3 && (
           <button 
@@ -92,12 +111,12 @@ export default function VpnPractice({ onNext, onBack }) {
 
       </div>
 
-      <button className="nav-arrow back-arrow" onClick={handleBackClick}>
+      <button className="prev-arrow" onClick={handleBackClick}>
         <img src={arrowIcon} alt="חזור" />
       </button>
 
       {internalStep === 3 && (
-        <button className="nav-arrow next-arrow" onClick={handleNextClick}>
+        <button className="next-arrow" onClick={handleNextClick}>
           <img src={arrowIcon} alt="הבא" />
         </button>
       )}

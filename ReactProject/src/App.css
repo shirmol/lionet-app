@@ -52,18 +52,20 @@ body {
 .card-button {
   padding: 12px 32px;
   font-size: 1.1rem;
-  font-weight: 600;
-  color: #00ffff;
-  background: transparent;
+  font-weight: 700; 
+  color: #000; 
+  background: #00ffff; 
   border: 2px solid #00ffff;
   border-radius: 999px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); 
 }
 
 .card-button:hover {
-  background: #00ffff;
-  color: #000;
+  background: #ccffff; 
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6); 
+  transform: scale(1.05); 
 }
 
 @media (max-width: 480px) {
@@ -133,4 +135,47 @@ body {
   .logos-row {
     gap: 0.5rem;
   }
+}
+
+.next-arrow,
+.prev-arrow {
+  position: fixed;
+  bottom: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  padding: 0;
+  margin: 0;
+  width: 62px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.next-arrow img,
+.prev-arrow img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  display: block;
+}
+
+.next-arrow { left: 20px; }
+.prev-arrow { right: 20px; }
+.prev-arrow img { transform: rotate(180deg); }
+.next-arrow:hover { transform: scale(1.1); }
+.prev-arrow:hover { transform: scale(1.1); } 
+
+@media (max-width: 900px) {
+  .next-arrow, .prev-arrow {
+    width: 35px; 
+    height: 35px;
+    bottom: 10px;
+  }
+  
+  .next-arrow { left: 15px; }
+  .prev-arrow { right: 15px; }
 }

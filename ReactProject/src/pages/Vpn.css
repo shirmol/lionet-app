@@ -1,4 +1,4 @@
-/* src/pages/Vpn.css */
+/* src/pages/Vpn.css - משודרג */
 
 html, body {
   margin: 0;
@@ -14,15 +14,15 @@ html, body {
   height: 100dvh;     
   width: 100vw;       
   box-sizing: border-box; 
-  background-color: #0f1115;
+  background: radial-gradient(circle at center, #1b1f22, #000000);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; 
+  justify-content: center; 
+  gap: 40px; 
   position: relative;
-  font-family: sans-serif;
-  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
   padding-bottom: 60px;
 }
 
@@ -32,28 +32,32 @@ html, body {
   max-width: 700px;
   padding: 0 20px; 
   flex-shrink: 0; 
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .vpn-title {
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: 800; 
   color: #22d3ee;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
   margin-top: 0;
+  letter-spacing: 2px;
 }
 
 .vpn-subtitle {
-  font-size: 1.5rem;
-  color: #e5e7eb;
-  margin-bottom: 0.2rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .vpn-description {
-  color: #9ca3af;
+  color: #a0a0a0;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
 .vpn-video-container {
@@ -65,26 +69,48 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-shrink: 1; 
-  padding: 0;
+  padding: 0 20px;
+  animation: scaleIn 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes glowPulse {
+  0% { 
+    opacity: 0.15; 
+    transform: scale(0.98); 
+  }
+  50% { 
+    opacity: 0.25; 
+    transform: scale(1.02); 
+  }
+  100% { 
+    opacity: 0.15; 
+    transform: scale(0.98); 
+  }
 }
 
 .video-glow {
   position: absolute;
-  inset: 0;
-  background-color: #22d3ee;
-  filter: blur(60px);
-  opacity: 0.15;
+  inset: -20px;
+  background: radial-gradient(circle, #22d3ee 0%, transparent 60%);
+  filter: blur(50px); 
   z-index: -1;
+  animation: glowPulse 6s infinite ease-in-out; 
 }
 
 .vpn-video-wrapper {
-  background-color: black;
-  border-radius: 16px;
-  border: 1px solid #1f2937;
-  box-shadow: 0 0 40px rgba(34, 211, 238, 0.1);
+  background-color: #000;
+  border-radius: 20px;
+  border: 2px solid rgba(34, 211, 238, 0.3); 
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); 
   overflow: hidden;
   width: 100%;
   aspect-ratio: 16 / 9; 
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.vpn-video-wrapper:hover {
+  border-color: rgba(34, 211, 238, 0.8); 
+  transform: scale(1.01); 
 }
 
 .phone-video {
@@ -92,75 +118,49 @@ html, body {
   height: 100%;
   object-fit: cover; 
 }
-.nav-arrow {
-  position: absolute; 
-  bottom: 20px;    
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  padding: 0;
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.nav-arrow img {
-  width: 60px; 
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  transition: transform 0.2s;
-  display: block;
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-.next-arrow { left: 20px; }
-.next-arrow:hover img { transform: scale(1.1); }
-.back-arrow { right: 20px; }
-.back-arrow img { transform: rotate(180deg); }
-.back-arrow:hover img { transform: rotate(180deg) scale(1.1); }
-
 
 @media (max-width: 768px) {
-
   .vpn-page {
-    background-color: #000000 ;
-    justify-content: center; 
-    gap: 15px; 
-    padding-bottom: 100px; 
+    background: #000; 
+    padding: 20px 0 80px; 
+    justify-content: flex-start;
+    gap: 30px;
+    overflow-y: auto; 
   }
 
-  .vpn-video-container {
-    max-width: 100%; 
-    display: flex;
-    justify-content: center;
-    margin-top: 0; 
-  }
-
-  .vpn-video-wrapper {
-    width: 95%;  
-    aspect-ratio: 16 / 9; 
-    height: auto; 
+  .vpn-text-section {
+    margin-top: 40px;
   }
 
   .vpn-title {
     font-size: 2.2rem; 
-    margin-bottom: 5px; 
   }
   
   .vpn-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
   }
   
   .vpn-description {
     font-size: 1rem;
     padding: 0 10px;
-    margin-bottom: 0;
   }
 
-  .phone-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
+  .vpn-video-container {
+    padding: 0;
   }
-  
-  .nav-arrow {
-    bottom: 30px;
+
+  .vpn-video-wrapper {
+    width: 90%; 
+    border-radius: 12px;
   }
 }

@@ -18,12 +18,14 @@ export default function LocationTutorial({ onNext, onBack }) {
       </div>
 
       <div className="loc-video-container">
+        <div className="video-glow"></div>
         <div className="loc-video-wrapper">
           <video 
             className="loc-video-element" 
             controls 
             autoPlay 
             muted 
+            playsInline 
             onEnded={() => setIsVideoEnded(true)}
           >
             <source src={locationVideo} type="video/mp4" />
@@ -31,13 +33,12 @@ export default function LocationTutorial({ onNext, onBack }) {
           </video>
         </div>
       </div>
-
-      <button className="loc-nav-arrow loc-back-arrow" onClick={onBack}>
+      <button className="prev-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
 
       {isVideoEnded && (
-        <button className="loc-nav-arrow loc-next-arrow" onClick={onNext}>
+        <button className="next-arrow" onClick={onNext}>
           <img src={arrowIcon} alt="הבא" />
         </button>
       )}

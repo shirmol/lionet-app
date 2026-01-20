@@ -25,13 +25,12 @@ const appsData = {
         description: "אפליקציה שמטרתה לאפשר קשר מתפרץ (PTT). המערכת פועלת בסנכרון מלא מול מכשירי הקשר הרגילים." 
     },
     whitewolf: { 
-        title: "להקת זאבים ", 
-        description: "אפליקציה שמטרתה לנהל את המעברים באיו\"ש, לא כולל בקרה ורישום של כניסות ויציאות." 
-
+        title: "זאב לבן", 
+        description: "אפליקציה שמטרתה לנהל את המעברים באיו\"ש, כולל בקרה ורישום של כניסות ויציאות." 
     },
     wolfpack: { 
-        title: "זאב לבן ", 
-        description: "אפליקציה שמטרתה לנהל את המעברים באיו\"ש, כולל בקרה ורישום של כניסות ויציאות." 
+        title: "להקת זאבים", 
+        description: "אפליקציה לניהול משימות וצוותים בשטח." 
     },
     fort: { 
         title: "FORT", 
@@ -43,7 +42,7 @@ const appsData = {
     },
     vpn: { 
         title: "VPN", 
-        description: "אפליקציה שמטרתה לאפשר חיבור מאובטח לרשת הצבאית. חובה להפעיל לפני שימוש באפליקציות ." 
+        description: "אפליקציה שמטרתה לאפשר חיבור מאובטח לרשת הצבאית. חובה להפעיל לפני שימוש באפליקציות." 
     },
     hub: { 
         title: "Hub", 
@@ -58,19 +57,26 @@ const appsData = {
 export default function LionetHome({ onNext, onBack }) {
   const [activeApp, setActiveApp] = useState(null);
   const closePopup = () => setActiveApp(null);
+  const handleNavigateToApp = () => {
+      if (onNext) {
+          onNext(activeApp); 
+      }
+  };
 
   return (
     <div className="lh-container">
+      
+      {/* מודל מידע */}
       {activeApp && (
           <div className="lh-modal-overlay" onClick={closePopup}>
               <div className="lh-info-card" onClick={(e) => e.stopPropagation()}>
                   <button className="lh-card-close-btn" onClick={closePopup}>X</button>
                   <h2 className="lh-card-title">{appsData[activeApp]?.title}</h2>
                   <p className="lh-card-desc">{appsData[activeApp]?.description}</p>
+                  
                   <button 
                     className="lh-card-action-btn" 
-                    onClick={() => {
-                    }}
+                    onClick={handleNavigateToApp}
                   >
                       מעבר ללומדה של האפליקציה
                   </button>
@@ -82,6 +88,7 @@ export default function LionetHome({ onNext, onBack }) {
         <h1 className="lh-main-title">הגעתם למסך הבית של הליונט</h1>
         <h2 className="lh-sub-text">לחץ על אפליקציה למידע נוסף</h2>
       </div>
+
       <div className="lh-device-wrapper">
         <img src={homeScreenImg} alt="Lionet Home" className="lh-device-image" />
         <div className="lh-hotspot lh-pos-akela" onClick={() => setActiveApp('akela')}></div>
@@ -98,9 +105,10 @@ export default function LionetHome({ onNext, onBack }) {
         <div className="lh-hotspot lh-pos-wolfpack" onClick={() => setActiveApp('wolfpack')}></div>
       </div>
 
-      <button className="lh-arrow-btn lh-arrow-back" onClick={onBack}>
+      <button className="prev-arrow" onClick={onBack}>
           <img src={arrowIcon} alt="חזור" />
       </button>
+      
     </div>
   );
 }

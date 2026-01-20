@@ -4,6 +4,7 @@ import arrowIcon from '../assets/arrow-next.png';
 
 export default function LockScreen({ onNext, onBack }) {
   const passwordSequence = [2, 5, 8, 0];
+  
   const getButtonStyle = (num) => {
     const index = passwordSequence.indexOf(num);
     if (index === -1) return {};
@@ -56,10 +57,12 @@ export default function LockScreen({ onNext, onBack }) {
         </div>
 
       </div>
-      <button className="nav-arrow back-arrow" onClick={onBack}>
+
+      <button className="prev-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
-      <button className="nav-arrow next-arrow" onClick={onNext}>
+
+      <button className="next-arrow" onClick={onNext}>
         <img src={arrowIcon} alt="המשך" />
       </button>
 

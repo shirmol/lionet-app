@@ -32,11 +32,11 @@ export default function Vpn({ onNext, onBack }) {
            </video>
         </div>
       </div>
-      <button className="nav-arrow back-arrow" onClick={onBack}>
+      <button className="prev-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
       {isVideoEnded && (
-        <button className="nav-arrow next-arrow" onClick={onNext}>
+        <button className="next-arrow" onClick={onNext}>
           <img src={arrowIcon} alt="המשך" />
         </button>
       )}

@@ -18,12 +18,12 @@ export default function SyncTutorial({ onNext, onBack }) {
       </div>
       
       <div className="sync-video-container">
+        <div className="video-glow"></div>
         <div className="sync-video-wrapper">
           <video 
             className="phone-video" 
             controls 
-            playsInline                // חובה: מונע פתיחה במסך מלא באייפון
-            webkit-playsinline="true"  // תמיכה לאייפונים ישנים
+            playsInline            
             onEnded={() => setIsVideoEnded(true)}
           >
             <source src={syncVideo} type="video/mp4" />
@@ -32,12 +32,12 @@ export default function SyncTutorial({ onNext, onBack }) {
         </div>
       </div>
 
-      <button className="nav-arrow back-arrow" onClick={onBack}>
+      <button className="prev-arrow" onClick={onBack}>
         <img src={arrowIcon} alt="חזור" />
       </button>
       
       {isVideoEnded && (
-        <button className="nav-arrow next-arrow" onClick={onNext}>
+        <button className="next-arrow" onClick={onNext}>
           <img src={arrowIcon} alt="הבא" />
         </button>
       )}
