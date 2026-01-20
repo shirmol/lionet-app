@@ -5,7 +5,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![IDF Project](https://img.shields.io/badge/Project-IDF_Civilian_Employee-006600?style=for-the-badge)
 
-> **A comprehensive interactive simulation designed to train operators on the full functionality of the Lionet device.**
+> **A comprehensive training platform designed to qualify operators on the Lionet device, covering network setup, system status, and application overview.**
 
 🔗 **[Click here to view the Live Demo](https://shirmol.github.io/lionet-app/)**
 
@@ -13,31 +13,26 @@
 
 ## 📖 About The Project
 
-This project is a dedicated training environment ("Lomda") for the **Lionet** device. The primary goal is to qualify soldiers and operators on how to fully operate the device, understand its requirements, and master its interface without the risk of mishandling real operational equipment.
+This project serves as a central training hub ("Lomda") for the **Lionet** device. It guides soldiers and operators through the essential steps of handling the device, ensuring they understand both the technical setup and the operational purpose of each installed application.
 
-**The platform simulates the device's OS and provides:**
-* **General Operation**: Guidance on how to operate the device correctly.
-* **System Navigation**: Familiarity with the home screen and settings.
-* **App-Specific Training**: Dedicated modules for each application installed on the device.
+## 🎯 Current Features & Capabilities
 
-## 🎯 Current Module: Connectivity & VPN
+The current version provides a complete overview of the device's ecosystem:
 
-The current version focuses on the critical initial setup: establishing a secure connection.
-* Simulating the secure browser environment.
-* Step-by-step guide for enabling the VPN.
-* Troubleshooting common connection errors.
+* **Network Connectivity**: Step-by-step guidance on connecting the device to the network (VPN setup).
+* **System Status & Versions**: Instructions on how to verify application versions and ensure the device is up-to-date.
+* **Application Overview**: A detailed explanation of each application installed on the device, including its purpose and operational guidelines.
+* **Device Operation**: General rules and best practices for daily use.
 
 ## 🔜 Future Roadmap
 
-This project is built to be scalable. Future updates will include interactive training modules for **all device applications**, such as:
-* [ ] Navigation & Maps Apps
-* [ ] Secure Communication Tools
-* [ ] Camera & Documentation
-* [ ] Device Maintenance & Settings
+The platform is designed to grow. The next phase will include:
+* **Deep Linking**: Integrating direct links to interactive simulations for every specific application mentioned in the overview.
+* **Advanced Scenarios**: Complex operational drills combining multiple apps.
 
 ## 📸 Screenshots
 
-| Device Interface | App Simulation | Error Feedback |
+| Network Setup | Version Check | App Overview |
 |:---:|:---:|:---:|
 | *(Drag image here)* | *(Drag image here)* | *(Drag image here)* |
 
