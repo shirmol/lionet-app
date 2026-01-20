@@ -7,12 +7,29 @@
     <title>Lionet Training</title>
     
     <style>
+      /* מאפס את כל האלמנטים בעולם */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* צובע את כל הרקע של הדפדפן בשחור ונועל גלילה */
       html, body {
         background-color: #0f1115 !important;
         margin: 0 !important;
         padding: 0 !important;
+        width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow: hidden !important; /* מעלים את פסי הגלילה */
+      }
+
+      /* מוודא שהאפליקציה תופסת את כל הגובה */
+      #root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </head>
