@@ -2,30 +2,36 @@
 
 .vpn-practice-page {
   direction: rtl;
-  height: auto;
-  min-height: 100vh;
+  /* נועל את הגובה לגובה המסך בדיוק */
+  height: 100vh;
+  height: 100dvh; /* למובייל מודרני */
   width: 100%;
+  
   box-sizing: border-box;
   background-color: #0f1115;
   color: white;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 23px;
-  padding-bottom: 100px;
+  justify-content: flex-start; /* מתחיל מלמעלה */
+  
+  padding-top: 20px;
+  padding-bottom: 0; /* ביטלתי את הריפוד התחתון הענק */
+  
   position: relative;
   font-family: sans-serif;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  
+  /* === שורת המחץ: ביטול גלילה === */
+  overflow: hidden; 
 }
 
 .practice-header {
   text-align: center;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   z-index: 10;
   width: 100%;
+  flex-shrink: 0; /* מונע מהכותרת להתכווץ */
 }
 
 .practice-title {
@@ -43,26 +49,33 @@
   margin-top: 0;
 }
 
+/* הקונטיינר של הטלפון */
 .phone-interactive-container {
   position: relative;
   z-index: 10;
   margin-top: 0;
-  flex-grow: 1;
+  
+  /* מאפשר לטלפון לתפוס את המקום שנשאר, אבל לא יותר מדי */
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
-  margin-bottom: 20px;
-  overflow: visible; 
+  
+  /* רוחב לפי התוכן כדי שהכפתורים לא יזוזו */
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .phone-img {
-  height: 74vh;
-  width: 320px;
+  /* גובה דינמי שתופס את רוב המסך אבל משאיר מקום לכותרת */
+  height: 74vh; 
+  width: 350px; /* רוחב אחיד כמו שאר התרגולים */
   object-fit: fill;
   display: block;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
 }
 
+/* כפתורים שקופים */
 .app-hotspot {
   position: absolute;
   background-color: transparent;
@@ -82,19 +95,18 @@
   outline: none !important;
 }
 
+/* בועת שגיאה */
 .error-bubble {
   position: fixed; 
   bottom: 85px; 
   left: 50%;
   transform: translateX(-50%);
-  
   background-color: #ff0055;
   color: white;
   padding: 10px 40px;
   min-width: 200px;
   border-radius: 50px;
   text-align: center;
-  
   font-weight: 600;
   font-size: 1.2rem;
   z-index: 99999; 
@@ -102,7 +114,6 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   white-space: nowrap;
-  
   animation: slideUpFade 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -111,11 +122,12 @@
   100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 
+/* מיקומים (מותאמים לרוחב 350px) */
 .vpn-icon-pos {
   bottom: 15.5%;
   right: 6.6%;
-  width: 55px;
-  height: 55px;
+  width: 15%;
+  height: 7%;
   border-radius: 50%;
 }
 
@@ -123,11 +135,12 @@
   top: 44.9%;
   left: 48.7%; 
   transform: translateX(-50%);
-  width: 260px;
-  height: 55px;
+  width: 75%;
+  height: 7%;
   border-radius: 8px;
 }
 
+/* טיימר */
 .timer-overlay {
   position: absolute;
   top: 41%;
@@ -150,26 +163,26 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-@media only screen and (max-width: 768px) {
+/* --- מובייל --- */
+@media only screen and (max-width: 900px) {
   .vpn-practice-page {
     background-color: #000000;
     justify-content: flex-start;
     padding-top: 20px;
-    padding-bottom: 100px; 
+    padding-bottom: 0; /* חשוב מאוד! */
   }
 
   .phone-interactive-container {
-    width: 318px;
-    height: auto;
-    aspect-ratio: auto;
+    width: 100%; /* במובייל תופס הכל */
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 0;
   }
 
   .phone-img {
     height: auto;
-    max-height: 65vh;
-    width: 318px;
+    max-height: 60vh; /* מגביל גובה כדי שלא תהיה גלילה */
+    width: 90%;
+    max-width: 350px;
     object-fit: fill;
   }
 
@@ -180,28 +193,13 @@
   }
 
   .practice-header {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    flex-shrink: 0;
   }
   .practice-title { font-size: 1.8rem; line-height: 1.2; margin-bottom: 4px; }
   .practice-instruction { font-size: 1.2rem; }
 
-  .vpn-icon-pos { bottom: 16.9%; right: 6.9%; width: 55px; height: 55px; }
-  .connect-btn-pos { top: 45.2%; left: 11.4%; width: 250px; height: 50px; }
-  .timer-overlay { top: 41%; left: 52%; }
-}
-
-@media only screen and (max-width: 410px) {
-  .practice-title { font-size: 1.6rem; }
-  .practice-instruction { font-size: 1.05rem; }
-  .phone-interactive-container { width: 300px; }
-  .phone-img { width: 300px; max-height: 60vh; }
-  
-  .error-bubble {
-    bottom: 75px; 
-  }
-
-  .vpn-icon-pos { bottom: 16%; right: 6.7%; width: 50px; height: 50px; }
-  .connect-btn-pos { top: 44.1%; left: 9.6%; width: 250px; height: 50px; }
+  /* התאמות קטנות לאחוזים במובייל */
+  .vpn-icon-pos { bottom: 16.9%; right: 6.9%; width: 15%; height: 7%; }
+  .connect-btn-pos { top: 45.2%; left: 11.4%; width: 70%; height: 6%; }
 }
