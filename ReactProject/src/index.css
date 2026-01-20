@@ -4,9 +4,15 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-html, body {
+/* === החלק החסר: איפוס אגרסיבי לכל האלמנטים === */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+/* ============================================== */
+
+html, body {
   width: 100%;
   height: 100%;
   background-color: #0f1115; 
@@ -18,8 +24,4 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
 }
